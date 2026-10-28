@@ -1,3 +1,4 @@
+import Header from "./components/sections/Header";
 import './App.css'
 
 function App() {
@@ -5,9 +6,7 @@ function App() {
 
   return (
     <>
-     <header>
-      <h1>EcoLoop</h1>
-     </header>
+     <Header />;
     </>
   )
 }
