@@ -1,7 +1,10 @@
+import "./header.css";
+import logo from "../../assets/Logo4.png";
+
 function Header () {
     return (
         <header className="header">
-            <h1 className="logo">EcoLoop</h1>
+            <img className="header-logo" src={logo} alt="EcoLoop" />
 
             <div className="header-acciones">
                 <button> Buscar </button>
