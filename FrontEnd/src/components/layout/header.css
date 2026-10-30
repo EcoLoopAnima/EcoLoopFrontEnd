@@ -36,6 +36,14 @@ button {
 .header-logo {
   height: 150px; /* Ajusta la altura según tus necesidades */
   width: auto;  /* Mantiene la proporción de la imagen */
-  
-  
+}
+
+.header-links {
+  display: flex;
+  gap: 1rem; /* Espacio entre los enlaces */
+}
+
+button img {
+  height: 3rem; /* Ajusta la altura según tus necesidades */
+  width: 3rem;  /* Mantiene la proporción de la imagen */
 }
