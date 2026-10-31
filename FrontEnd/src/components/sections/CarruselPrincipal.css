@@ -1,0 +1,59 @@
+.carrusel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.carrusel-fotos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 1;
+  min-width: 0;
+  gap: 20px;
+}
+
+.foto {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.flecha {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333333;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    margin: 5px;
+}
