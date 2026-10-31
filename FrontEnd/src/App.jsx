@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./components/sections/Header";
+import Header from "./components/layout/Header";
 import CarruselCarrito from "./components/sections/CarruselCarrito";
 import Carrito from "./components/ui/Carrito";
 
@@ -15,9 +15,8 @@ function App() {
 
   return (
     <>
-      <Header />
-
-      {mostrarCarrito ? (
+     <Header />
+{mostrarCarrito ? (
         <Carrito
           carrito={carrito}
           cerrarCarrito={() => setMostrarCarrito(false)}
@@ -25,7 +24,14 @@ function App() {
       ) : (
         <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
       )}
+    <div>
+      <h2>Conocé nuestra Tienda</h2>
+
+      <CarruselPrincipal />
+    </div>
+
     </>
+
   );
 }
 
