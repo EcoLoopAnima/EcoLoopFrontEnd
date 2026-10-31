@@ -19,7 +19,7 @@ body {
 .header {
   display: flex;
   justify-content: space-between; /* logo a la izquierda, botones a la derecha */
-  align-items: center;            /* centrados en vertical */
+  align-items: center; /* centrados en vertical */
   padding: 0.75rem 1.5rem;
   background: #fff;
   border-bottom: 1px solid var(--borde);
@@ -33,7 +33,7 @@ body {
 
 .header-actions {
   display: flex;
-  gap: 0.75rem;                   /* espacio entre botones */
+  gap: 0.75rem; /* espacio entre botones */
 }
 
 .header-actions button {
