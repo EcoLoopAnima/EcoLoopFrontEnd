@@ -1,5 +1,5 @@
 import { useState } from "react";
-import productos from "../../data/productos";
+import productos from "../data/productos";
 import Producto from "../ui/Producto";
 import "./CarruselCarrito.css";
 
