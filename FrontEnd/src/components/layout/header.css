@@ -13,6 +13,7 @@
   margin: 0;
   height: 150px; /* Ajusta la altura según tus necesidades */
   width: auto;   /* Mantiene la proporción de la imagen */
+  cursor: pointer;
 }
 
 .header-links {
@@ -39,7 +40,7 @@ button {
 }
 
 button:hover {
-  background: rgba(47, 107, 79, 0.12); /* NUEVO: fondo verde transparente */
+  background: rgba(14, 168, 96, 0.12); /* NUEVO: fondo verde transparente */
 }
 
 button img {

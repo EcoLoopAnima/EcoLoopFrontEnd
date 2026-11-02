@@ -4,28 +4,33 @@ import lupa from "../../assets/lupa.png";
 import usuario from "../../assets/usuario.png";
 import carrito from "../../assets/carrito.png";
 
-function Header () {
+function Header ({ onNavigate }) {
     return (
         <header className="header">
 
-            <img className="header-logo" src={logo} alt="EcoLoop" />
+            <img
+                className="header-logo"
+                src={logo}
+                alt="EcoLoop"
+                onClick={() => onNavigate("inicio")}
+            />
 
             <div className="header-links">
-                <button> Inicio </button>
-                <button> Tienda </button>
-                <button> Impacto </button>
-                <button> Puntos Vida </button>
-                <button> Nosotros </button>
+                <button onClick={() => onNavigate("inicio")}> Inicio </button>
+                <button onClick={() => onNavigate("tienda")}> Tienda </button>
+                <button onClick={() => onNavigate("impacto")}> Impacto </button>
+                <button onClick={() => onNavigate("puntos")}> Puntos Vida </button>
+                <button onClick={() => onNavigate("nosotros")}> Nosotros </button>
             </div>
 
             <div className="header-acciones">
                 <button aria-label="Buscar">
                     <img src={lupa} alt="" />
                 </button>
-                <button aria-label="Sign in">
+                <button aria-label="Sign in" onClick={() => onNavigate("login")}>
                     <img src={usuario} alt="" />
                 </button>
-                <button aria-label="Carrito">
+                <button aria-label="Carrito" onClick={() => onNavigate("carrito")}>
                     <img src={carrito} alt="" />
                 </button>
             </div>
