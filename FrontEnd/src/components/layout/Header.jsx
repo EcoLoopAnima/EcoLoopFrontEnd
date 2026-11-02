@@ -1,12 +1,15 @@
+import { useState } from "react";
 import "./header.css";
 import logo from "../../assets/Logo4.png";
-import lupa from "../../assets/lupa.png";
 import usuario from "../../assets/usuario.png";
 import carrito from "../../assets/carrito.png";
+import Lupa from "../ui/Lupa";
 
-function Header ({ onNavigate }) {
+function Header({ onNavigate }) {
+    const [buscando, setBuscando] = useState(false);
+
     return (
-        <header className="header">
+        <header className={`header ${buscando ? "header-buscando" : ""}`}>
 
             <img
                 className="header-logo"
@@ -24,15 +27,19 @@ function Header ({ onNavigate }) {
             </div>
 
             <div className="header-acciones">
-                <button aria-label="Buscar">
-                    <img src={lupa} alt="" />
-                </button>
-                <button aria-label="Sign in" onClick={() => onNavigate("login")}>
-                    <img src={usuario} alt="" />
-                </button>
-                <button aria-label="Carrito" onClick={() => onNavigate("carrito")}>
-                    <img src={carrito} alt="" />
-                </button>
+                <Lupa
+                    abierto={buscando}
+                    setAbierto={setBuscando}
+                    onBuscar={(texto) => console.log("Buscando:", texto)}
+                />
+                <div className="header-extra">
+                    <button aria-label="Sign in" onClick={() => onNavigate("login")}>
+                        <img src={usuario} alt="" />
+                    </button>
+                    <button aria-label="Carrito" onClick={() => onNavigate("carrito")}>
+                        <img src={carrito} alt="" />
+                    </button>
+                </div>
             </div>
 
         </header>

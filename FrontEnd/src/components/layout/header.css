@@ -2,8 +2,8 @@
 
 .header {
   display: flex;
-  justify-content: space-between; /* logo a la izquierda, botones a la derecha */
-  align-items: center;            /* centrados en vertical */
+  justify-content: space-between; 
+  align-items: center;           
   padding: 1.3rem 1.5rem;
   background: #fff;
   border-bottom: 1px solid var(--borde);
@@ -11,19 +11,23 @@
 
 .header-logo {
   margin: 0;
-  height: 150px; /* Ajusta la altura según tus necesidades */
-  width: auto;   /* Mantiene la proporción de la imagen */
+  height: 150px; 
+  width: auto;  
   cursor: pointer;
 }
 
 .header-links {
   display: flex;
-  gap: 1rem; /* Espacio entre los enlaces */
+  gap: 1rem;
+  overflow: hidden;       
+  max-width: 1000px;                                  
+  transition: max-width 0.35s ease, opacity 0.2s ease; 
 }
 
 .header-acciones {
   display: flex;
-  gap: 0.75rem; /* espacio entre botones */
+  gap: 0.75rem;
+  align-items: center;
 }
 
 button {
@@ -35,15 +39,79 @@ button {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0.5rem 1rem;
-  border-radius: 2px;                /* NUEVO: esquinas suaves */
-  transition: background 0.2s ease;  /* NUEVO: cambio suave */
+  border-radius: 2px;               
+  transition: background 0.2s ease; 
 }
 
 button:hover {
-  background: rgba(14, 168, 96, 0.12); /* NUEVO: fondo verde transparente */
+  background: rgba(14, 168, 96, 0.12); 
 }
 
 button img {
-  height: 2.3rem; /* Ajusta la altura según tus necesidades */
-  width: 2.3rem;  /* Mantiene la proporción de la imagen */
+  height: 2.3rem;
+  width: 2.3rem; 
+}
+
+/* ---- Buscador desplegable ---- */
+.header-links button {
+  white-space: nowrap; /* evita que el texto se parta al colapsar */
+}
+
+.header-extra {
+  display: flex;
+  gap: 0.75rem;
+  overflow: hidden;
+  max-width: 12rem;
+  transition: max-width 0.35s ease, opacity 0.2s ease;
+}
+
+.lupa {
+  display: flex;
+  align-items: center;
+  margin-left: auto;          /* anclada a la derecha */
+  width: 5.5rem;              /* = ancho del botón (2.3rem + padding 2rem) */
+  height: 3.3rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: width 0.35s ease, border-color 0.35s ease;
+}
+
+.lupa input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 1rem;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.35s ease; /*Animación*/
+}
+
+.lupa button {
+  flex-shrink: 0;
+}
+
+/* ---- Estado: buscando ---- */
+.header-buscando .header-links,
+.header-buscando .header-extra {
+  max-width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header-buscando .header-acciones {
+  flex: 1;
+  gap: 0;
+}
+
+.lupa-abierta {
+  width: 100%;                /* crece hacia la izquierda */
+  border-color: var(--borde);
+}
+
+.lupa-abierta input {
+  opacity: 1;
 }
