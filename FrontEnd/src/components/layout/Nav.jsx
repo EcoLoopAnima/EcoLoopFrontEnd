@@ -1,13 +1,14 @@
 import "./nav.css";
 
-function Nav() {
+function Nav({ onNavigate }) {
     return (
         <nav className="nav">
-            <a href="#">Inicio</a>
-            <a href="#">Tienda</a>
-            <a href="#">Impacto</a>
-            <a href="#">Puntos Vida</a>
-            <a href="#">Nosotros</a>
+            <button onClick={() => onNavigate("inicio")}>Inicio</button>
+            <button onClick={() => onNavigate("tienda")}>Tienda</button>
+            <button onClick={() => onNavigate("impacto")}>Impacto</button>
+            <button onClick={() => onNavigate("puntos")}>Puntos Vida</button>
+            <button onClick={() => onNavigate("nosotros")}>Nosotros</button>
+            <button onClick={() => onNavigate("carrito")}>Carrito</button>
         </nav>
     );
 }

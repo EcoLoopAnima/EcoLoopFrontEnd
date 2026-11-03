@@ -1,33 +1,45 @@
+import { useState } from "react";
 import "./header.css";
 import logo from "../../assets/Logo4.png";
-import lupa from "../../assets/lupa.png";
 import usuario from "../../assets/usuario.png";
 import carrito from "../../assets/carrito.png";
+import Lupa from "../ui/Lupa";
 
-function Header () {
+function Header({ onNavigate }) {
+    const [buscando, setBuscando] = useState(false);
+
     return (
-        <header className="header">
+        <header className={`header ${buscando ? "header-buscando" : ""}`}>
 
-            <img className="header-logo" src={logo} alt="EcoLoop" />
+            <img
+                className="header-logo"
+                src={logo}
+                alt="EcoLoop"
+                onClick={() => onNavigate("inicio")}
+            />
 
             <div className="header-links">
-                <button> Inicio </button>
-                <button> Tienda </button>
-                <button> Impacto </button>
-                <button> Puntos Vida </button>
-                <button> Nosotros </button>
+                <button onClick={() => onNavigate("inicio")}> Inicio </button>
+                <button onClick={() => onNavigate("tienda")}> Tienda </button>
+                <button onClick={() => onNavigate("impacto")}> Impacto </button>
+                <button onClick={() => onNavigate("puntos")}> Puntos Vida </button>
+                <button onClick={() => onNavigate("nosotros")}> Nosotros </button>
             </div>
 
             <div className="header-acciones">
-                <button aria-label="Buscar">
-                    <img src={lupa} alt="" />
-                </button>
-                <button aria-label="Sign in">
-                    <img src={usuario} alt="" />
-                </button>
-                <button aria-label="Carrito">
-                    <img src={carrito} alt="" />
-                </button>
+                <Lupa
+                    abierto={buscando}
+                    setAbierto={setBuscando}
+                    onBuscar={(texto) => console.log("Buscando:", texto)}
+                />
+                <div className="header-extra">
+                    <button aria-label="Sign in" onClick={() => onNavigate("login")}>
+                        <img src={usuario} alt="" />
+                    </button>
+                    <button aria-label="Carrito" onClick={() => onNavigate("carrito")}>
+                        <img src={carrito} alt="" />
+                    </button>
+                </div>
             </div>
 
         </header>
