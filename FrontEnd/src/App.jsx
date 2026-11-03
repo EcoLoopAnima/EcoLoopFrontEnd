@@ -11,6 +11,9 @@ import Login from "./components/pages/Login";
 import CarritoPage from "./components/pages/Carrito";
 import Carrito from "./components/ui/Carrito";
 
+import CarruselPrincipal from "./components/sections/CarruselPrincipal";
+import CarruselCarrito from "./components/sections/CarruselCarrito";
+
 function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
@@ -37,14 +40,25 @@ function App() {
       />
 
       {page === "inicio" && <Inicio />}
-      {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
+
+      {page === "tienda" && (
+        <>
+          <Tienda agregarAlCarrito={agregarAlCarrito} />
+
+          <div>
+            <h2>Conocé nuestra Tienda</h2>
+            <CarruselPrincipal agregarAlCarrito={agregarAlCarrito} />
+            <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
+          </div>
+        </>
+      )}
+
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
       {page === "nosotros" && <Nosotros />}
       {page === "login" && <Login />}
       {page === "carrito" && <CarritoPage carrito={carrito} />}
 
-      {/* Panel del carrito (desde main) */}
       {mostrarCarrito && (
         <Carrito carrito={carrito} cerrarCarrito={cerrarCarrito} />
       )}
