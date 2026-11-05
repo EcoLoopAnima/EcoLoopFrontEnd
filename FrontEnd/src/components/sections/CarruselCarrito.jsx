@@ -19,7 +19,7 @@ function CarruselCarrito({ agregarAlCarrito }) {
       <button onClick={anterior}>❮</button>
 
       <div className="carrusel-fotos">
-        {[0, 1, 2].map((numero) => {
+        {[0, 1, 2, 3].map((numero) => {
           const posicion = (indice + numero) % productos.length;
 
           return (
