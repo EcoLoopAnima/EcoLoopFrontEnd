@@ -40,6 +40,7 @@
     height: auto;
     display: block;
     object-fit: contain;
+    border-radius: 18px;
 }
 
 .nosotros-texto {
@@ -53,6 +54,7 @@
     color: #405638;
     margin-bottom: 25px;
     font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
 .nosotros-texto p {
