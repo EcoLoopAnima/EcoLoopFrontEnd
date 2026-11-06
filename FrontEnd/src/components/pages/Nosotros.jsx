@@ -96,7 +96,10 @@ function Nosotros() {
     <div className="propositos-contenedor">
 
         <article className="proposito-card">
-            <span className="proposito-numero">1</span>
+
+            <div className="proposito-icono">
+    <i className="fa-solid fa-recycle"></i>
+</div>
             <h3>Reutilizar</h3>
             <p>
                 Reducir el desperdicio y aprovechar materiales
@@ -105,7 +108,9 @@ function Nosotros() {
         </article>
 
         <article className="proposito-card">
-            <span className="proposito-numero">2</span>
+            <div className="proposito-icono">
+    <i className="fa-solid fa-graduation-cap"></i>
+</div>
             <h3>Educar</h3>
             <p>
                 Promover una educación más accesible
@@ -114,7 +119,9 @@ function Nosotros() {
         </article>
 
         <article className="proposito-card">
-            <span className="proposito-numero">3</span>
+            <div className="proposito-icono">
+    <i className="fa-solid fa-handshake"></i>
+</div>
             <h3>Compartir</h3>
             <p>
                 Generar oportunidades a través
@@ -123,7 +130,9 @@ function Nosotros() {
         </article>
 
         <article className="proposito-card">
-            <span className="proposito-numero">4</span>
+            <div className="proposito-icono">
+    <i className="fa-solid fa-book-open"></i>
+</div>
             <h3>Incluir</h3>
             <p>
                 Contribuir a que más estudiantes
@@ -135,44 +144,82 @@ function Nosotros() {
 
 </section>
 
-      {/* Nuestra propuesta */}
-      <section className="nosotros-propuesta">
+      {/* NUESTRA PROPUESTA */}
+
+<section className="nosotros-propuesta">
+
+    <div className="propuesta-encabezado">
         <h2>¿Cómo lo hacemos?</h2>
-
         <p>
-          Nuestra propuesta combina el intercambio de
-          materiales reutilizables con una tienda de
-          productos escolares reciclados.
+            Dos formas de transformar recursos en nuevas oportunidades.
         </p>
+    </div>
 
-        <div className="propuesta-tarjetas">
+    <div className="propuesta-tarjetas">
 
-          <article>
+        {/* CARD CANJE */}
+
+        <article className="propuesta-card propuesta-canje">
+
+            <span className="propuesta-numero">01</span>
+
+            <div className="propuesta-icono">
+                <i className="fa-solid fa-arrows-rotate"></i>
+            </div>
+
             <h3>Canje de materiales</h3>
-            <p>
-              Recibimos materiales reutilizables para
-              que puedan tener una nueva oportunidad
-              de uso.
-            </p>
-          </article>
 
-          <article>
+            <h4>Lo que ya no usás puede servirle a alguien más.</h4>
+
+            <p>
+                Recibimos materiales reutilizables para darles
+                una nueva oportunidad de uso y fomentar
+                el intercambio responsable.
+            </p>
+
+            <span className="propuesta-detalle">
+                REUTILIZAR · COMPARTIR · TRANSFORMAR
+            </span>
+
+        </article>
+
+
+        {/* CARD TIENDA */}
+
+        <article className="propuesta-card propuesta-tienda">
+
+            <span className="propuesta-numero">02</span>
+
+            <div className="propuesta-icono">
+                <i className="fa-solid fa-bag-shopping"></i>
+            </div>
+
             <h3>Nuestra tienda</h3>
-            <p>
-              Ofrecemos productos y kits escolares
-              elaborados a partir de materiales
-              reciclados.
-            </p>
-          </article>
 
-        </div>
-      </section>
+            <h4>Útiles con una nueva historia.</h4>
+
+            <p>
+                Ofrecemos productos y kits escolares elaborados
+                a partir de materiales reciclados, acercando
+                alternativas responsables para aprender.
+            </p>
+
+            <span className="propuesta-detalle">
+                RECICLAR · COMPRAR · EDUCAR
+            </span>
+
+        </article>
+
+    </div>
+
+</section>
 
       {/* Cierre */}
-      <section className="nosotros-cierre">
-        <h2>Pequeñas acciones, grandes cambios.</h2>
-        <p>Reciclá, comprá, educá.</p>
-      </section>
+<footer className="nosotros-cierre">
+  <p className="cierre-frase">Pequeñas acciones, grandes cambios.</p>
+  <p className="cierre-slogan">Reciclá, comprá, educá.</p>
+  <span className="cierre-marca">EcoLoop</span>
+</footer>
 
     </main>
   );
