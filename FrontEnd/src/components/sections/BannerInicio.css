@@ -1,12 +1,12 @@
-.bannerinicio {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.banner-inicio {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
 }
 
-.bannerinicio img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+.banner-inicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

@@ -39,19 +39,23 @@ function App() {
         abrirCarrito={abrirCarrito}
       />
 
-      {page === "inicio" && <Inicio />}
+      {page === "inicio" && (
+  <>
+    <Inicio />
+    <CarruselPrincipal />
+  </>
+)}
 
-      {page === "tienda" && (
-        <>
-          <Tienda agregarAlCarrito={agregarAlCarrito} />
+     {page === "tienda" && (
+  <>
+    <Tienda agregarAlCarrito={agregarAlCarrito} />
 
-          <div>
-            <h2>Conocé nuestra Tienda</h2>
-            <CarruselPrincipal agregarAlCarrito={agregarAlCarrito} />
-            <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
-          </div>
-        </>
-      )}
+    <div>
+      <h2>Conocé nuestra Tienda</h2>
+      <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
+    </div>
+  </>
+)}
 
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
