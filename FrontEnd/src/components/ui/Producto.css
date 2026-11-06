@@ -50,14 +50,10 @@
 .producto button {
   width: 100%;
   padding: 12px;
-  background-color: #184cad;
+  background-color: var(--verde);
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 15px;
   cursor: pointer;
-}
-
-.producto button:hover {
-  background-color: #123a85;
 }
