@@ -1,19 +1,24 @@
 import "./Producto.css";
+
 function Producto({ producto, agregarAlCarrito }) {
   return (
-    <div className="producto">
-      <img src={producto.imagen} alt={producto.nombre} />
+    <article className="producto">
+      <div className="producto-imagen">
+        <img src={producto.imagen} alt={producto.nombre} />
+      </div>
 
-      <h3>{producto.nombre}</h3>
+      <div className="producto-info">
+        <h3>{producto.nombre}</h3>
 
-      <p>{producto.descripcion}</p>
+        <p className="producto-descripcion">{producto.descripcion}</p>
 
-      <h4>${producto.precio}</h4>
+        <p className="producto-precio">${producto.precio}</p>
 
-      <button onClick={() => agregarAlCarrito(producto)}>
-        Agregar al carrito
-      </button>
-    </div>
+        <button onClick={() => agregarAlCarrito(producto)}>
+          Agregar al carrito
+        </button>
+      </div>
+    </article>
   );
 }
 

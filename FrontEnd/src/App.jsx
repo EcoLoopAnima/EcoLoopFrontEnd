@@ -11,9 +11,6 @@ import Login from "./components/pages/Login";
 import CarritoPage from "./components/pages/Carrito";
 import Carrito from "./components/ui/Carrito";
 
-import CarruselPrincipal from "./components/sections/CarruselPrincipal";
-import CarruselCarrito from "./components/sections/CarruselCarrito";
-
 function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
@@ -46,16 +43,7 @@ function App() {
   </>
 )}
 
-     {page === "tienda" && (
-  <>
-    <Tienda agregarAlCarrito={agregarAlCarrito} />
-
-    <div>
-      <h2>Conocé nuestra Tienda</h2>
-      <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
-    </div>
-  </>
-)}
+      {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
 
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
