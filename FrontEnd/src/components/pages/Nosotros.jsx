@@ -1,5 +1,181 @@
+import "./Nosotros.css";
+
 function Nosotros() {
-    return <h2>Página Nosotros</h2>;
+  return (
+    <main className="nosotros">
+
+      
+{/* PRESENTACIÓN INSTITUCIONAL */}
+
+<section className="nosotros-presentacion">
+
+    <div className="nosotros-banner">
+        <img
+            src="src/assets/moña.jpg"
+            alt="Un futuro con más oportunidades"
+        />
+    </div>
+
+    <div className="nosotros-texto">
+
+        <h1>¿Quiénes somos?</h1>
+
+        <p>
+            EcoLoop nace de una idea: transformar materiales
+            que todavía tienen vida útil en nuevas oportunidades
+            para aprender.
+        </p>
+
+        <p>
+            Creemos que el acceso a los materiales escolares
+            es fundamental para una educación más equitativa
+            y que muchos recursos que dejamos de utilizar
+            todavía pueden tener valor.
+        </p>
+
+    </div>
+
+</section>
+
+     
+{/* NUESTRA MOTIVACIÓN */}
+
+<section className="nosotros-motivacion">
+
+    <div className="motivacion-contenido">
+
+        <div className="motivacion-texto">
+
+            <h2>¿Qué nos motiva?</h2>
+
+            <p>
+                Muchas veces, materiales escolares que todavía
+                pueden utilizarse terminan descartados, mientras
+                que otras personas encuentran dificultades para
+                acceder a los útiles que necesitan.
+            </p>
+
+            <p>
+                En EcoLoop buscamos conectar estas dos realidades,
+                promoviendo la reutilización y generando nuevas
+                oportunidades a través del intercambio.
+            </p>
+
+            <span className="motivacion-frase">
+                Cada material puede tener una nueva oportunidad.
+            </span>
+
+        </div>
+
+        <div className="motivacion-imagen">
+            <img
+                src="/assets/kitEscolar.jpg"
+                alt="Materiales escolares reutilizables"
+            />
+        </div>
+
+    </div>
+
+</section>
+
+     
+
+{/* NUESTROS PROPÓSITOS */}
+
+<section className="propositos">
+
+    <div className="propositos-encabezado">
+        <h2>Nuestros propósitos</h2>
+
+        <p>
+            Pequeñas acciones que construyen
+            un futuro más sostenible.
+        </p>
+    </div>
+
+    <div className="propositos-contenedor">
+
+        <article className="proposito-card">
+            <span className="proposito-numero">1</span>
+            <h3>Reutilizar</h3>
+            <p>
+                Reducir el desperdicio y aprovechar materiales
+                que todavía pueden utilizarse.
+            </p>
+        </article>
+
+        <article className="proposito-card">
+            <span className="proposito-numero">2</span>
+            <h3>Educar</h3>
+            <p>
+                Promover una educación más accesible
+                y consciente.
+            </p>
+        </article>
+
+        <article className="proposito-card">
+            <span className="proposito-numero">3</span>
+            <h3>Compartir</h3>
+            <p>
+                Generar oportunidades a través
+                del intercambio.
+            </p>
+        </article>
+
+        <article className="proposito-card">
+            <span className="proposito-numero">4</span>
+            <h3>Incluir</h3>
+            <p>
+                Contribuir a que más estudiantes
+                accedan a materiales escolares.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+      {/* Nuestra propuesta */}
+      <section className="nosotros-propuesta">
+        <h2>¿Cómo lo hacemos?</h2>
+
+        <p>
+          Nuestra propuesta combina el intercambio de
+          materiales reutilizables con una tienda de
+          productos escolares reciclados.
+        </p>
+
+        <div className="propuesta-tarjetas">
+
+          <article>
+            <h3>Canje de materiales</h3>
+            <p>
+              Recibimos materiales reutilizables para
+              que puedan tener una nueva oportunidad
+              de uso.
+            </p>
+          </article>
+
+          <article>
+            <h3>Nuestra tienda</h3>
+            <p>
+              Ofrecemos productos y kits escolares
+              elaborados a partir de materiales
+              reciclados.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      {/* Cierre */}
+      <section className="nosotros-cierre">
+        <h2>Pequeñas acciones, grandes cambios.</h2>
+        <p>Reciclá, comprá, educá.</p>
+      </section>
+
+    </main>
+  );
 }
 
 export default Nosotros;

@@ -1,0 +1,454 @@
+
+/* =================================
+   CONTENEDOR GENERAL
+================================= */
+
+.nosotros {
+    width: 100%;
+    background-color: #f5f0e6;
+    color: #333b2e;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =================================
+   PRESENTACIÓN: FOTO + TEXTO
+================================= */
+
+.nosotros-presentacion {
+    width: 100%;
+    min-height: 330px;
+    padding: 45px 5%;
+    background-color: #e9e5d8;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+
+}
+
+
+.nosotros-banner {
+    width: 48%;
+    display: flex;
+    align-items: center;
+}
+
+.nosotros-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nosotros-texto {
+    width: 52%;
+    padding: 20px 3%;
+    text-align: left;
+}
+
+.nosotros-texto h1 {
+    font-size: 40px;
+    color: #405638;
+    margin-bottom: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.nosotros-texto p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333b2e;
+    margin-bottom: 18px;
+}
+
+/* CELULARES */
+
+@media (max-width: 768px) {
+
+    .nosotros-presentacion {
+        flex-direction: column;
+        padding: 35px 6%;
+        gap: 20px;
+    }
+
+    .nosotros-banner,
+    .nosotros-texto {
+        width: 100%;
+    }
+
+    .nosotros-texto {
+        padding: 10px 2%;
+    }
+
+    .nosotros-texto h1 {
+        font-size: 32px;
+    }
+
+    .nosotros-texto p {
+        font-size: 16px;
+    }
+}
+
+
+.nosotros-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nosotros-texto {
+    width: 55%;
+    text-align: left;
+}
+
+.nosotros-texto p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+
+/* =================================
+   NUESTRA MOTIVACIÓN
+================================= */
+
+.nosotros-motivacion {
+    width: 100%;
+    padding: 75px 9%;
+    background-color: #f5f0e6;
+    
+}
+
+.motivacion-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 65px;
+}
+
+.motivacion-texto {
+    width: 55%;
+}
+
+.motivacion-texto h2 {
+    font-size: 38px;
+    color: #405638;
+    margin-bottom: 30px;
+}
+
+.motivacion-texto p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #465343;
+    margin-bottom: 20px;
+}
+
+.motivacion-frase {
+    display: block;
+    margin-top: 30px;
+    color: #526747;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.motivacion-imagen {
+    width: 45%;
+}
+
+.motivacion-imagen img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .nosotros-motivacion {
+        padding: 45px 7%;
+    }
+
+    .motivacion-contenido {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .motivacion-texto,
+    .motivacion-imagen {
+        width: 100%;
+    }
+
+    .motivacion-texto h2 {
+        font-size: 30px;
+    }
+
+    .motivacion-imagen img {
+        height: auto;
+    }
+}
+
+
+
+/* =================================
+   NUESTROS PROPÓSITOS
+================================= */
+
+.propositos {
+    padding: 65px 6%;
+    background-color: #e9e5d8;
+    text-align: center;
+}
+
+.propositos-encabezado h2 {
+    font-size: 38px;
+    color: #344735;
+    margin-bottom: 12px;
+}
+
+.propositos-encabezado p {
+    font-size: 17px;
+    color: #526747;
+    margin-bottom: 40px;
+}
+
+.propositos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.proposito-card {
+    min-height: 210px;
+    padding: 28px 22px;
+    border-radius: 22px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.proposito-card:nth-child(odd) {
+    background-color: #829684;
+}
+
+.proposito-card:nth-child(even) {
+    background-color: #e2caa5;
+}
+
+.proposito-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.proposito-numero {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #344735;
+    margin-bottom: 12px;
+}
+
+.proposito-card:nth-child(even) .proposito-numero {
+    color: #526747;
+}
+
+.proposito-card h3 {
+    font-size: 23px;
+    color: #344735;
+    margin: 5px 0 12px;
+}
+
+.proposito-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #465343;
+    margin: 0;
+}
+
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    .propositos-contenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    .propositos {
+        padding: 45px 7%;
+    }
+
+    .propositos-encabezado h2 {
+        font-size: 30px;
+    }
+
+    .propositos-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+/* =================================
+   NUESTRA PROPUESTA
+================================= */
+
+.nosotros-propuesta {
+    padding: 65px 10%;
+    text-align: center;
+}
+
+.nosotros-propuesta h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #405638;
+}
+
+.nosotros-propuesta > p {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.propuesta-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.propuesta-tarjetas article {
+    background-color: #e5e9dc;
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.propuesta-tarjetas h3 {
+    color: #405638;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.propuesta-tarjetas p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   CIERRE
+================================= */
+
+.nosotros-cierre {
+    padding: 55px 20px;
+    text-align: center;
+    background-color: #526747;
+    color: #f8f5ed;
+}
+
+.nosotros-cierre h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.nosotros-cierre p {
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+
+/* =================================
+   ADAPTACIÓN A TABLETS
+================================= */
+
+@media (max-width: 900px) {
+
+    .propositos-contenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nosotros-presentacion {
+        gap: 30px;
+        padding: 50px 6%;
+    }
+
+    .nosotros-texto h1 {
+        font-size: 34px;
+    }
+}
+
+
+/* =================================
+   ADAPTACIÓN A CELULARES
+================================= */
+
+@media (max-width: 600px) {
+
+    .nosotros-presentacion {
+        flex-direction: column;
+        padding: 40px 7%;
+        gap: 25px;
+    }
+
+    .nosotros-banner,
+    .nosotros-texto {
+        width: 100%;
+    }
+
+    .nosotros-texto h1 {
+        font-size: 32px;
+    }
+
+    .nosotros-texto p {
+        font-size: 16px;
+    }
+
+    .nosotros-motivacion {
+        padding: 45px 7%;
+    }
+
+    .nosotros-motivacion h2,
+    .nosotros-propuesta h2 {
+        font-size: 26px;
+    }
+
+    .propositos {
+        padding: 40px 7%;
+    }
+
+    .propositos h2 {
+        font-size: 28px;
+    }
+
+    .propositos-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .propuesta-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-cierre h2 {
+        font-size: 25px;
+    }
+}
