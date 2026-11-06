@@ -36,7 +36,12 @@ function App() {
         abrirCarrito={abrirCarrito}
       />
 
-      {page === "inicio" && <Inicio />}
+      {page === "inicio" && (
+  <>
+    <Inicio />
+    <CarruselPrincipal />
+  </>
+)}
 
       {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
 
