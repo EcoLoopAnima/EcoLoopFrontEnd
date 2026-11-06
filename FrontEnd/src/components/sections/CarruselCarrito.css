@@ -1,22 +1,12 @@
-.carrusel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+.tienda-productos {
   width: 100%;
-  padding: 30px 0;
-}
-
-.carrusel-fotos {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  width: 90%;
-}
-
-.producto {
-  width: 23%;
-  min-height: 450px;
-  padding: 15px;
+  padding: 20px;
   box-sizing: border-box;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
