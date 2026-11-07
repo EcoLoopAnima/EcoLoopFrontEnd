@@ -28,7 +28,7 @@ function ComoFunciona() {
     return (
         <section className="como-funciona">
 
-            <h2>¿Cómo funciona Vida Digna?</h2>
+            <h2>¿Cómo funciona EcoLoop?</h2>
 
             <div className="pasos-contenedor">
 
