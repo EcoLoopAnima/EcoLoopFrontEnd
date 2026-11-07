@@ -1,0 +1,60 @@
+
+.beneficios-inicio {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background-color: #f5f3e8;
+}
+
+.beneficio-card {
+    background-color: #e9eddf;
+    color: #354d36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 12px 10px;
+    border-radius: 12px;
+    min-height: 65px;
+    box-sizing: border-box;
+}
+
+.beneficio-icono {
+    font-size: 30px;
+    color: #426746;
+    width: 38px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.beneficio-card p {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 650px) {
+    .beneficios-inicio {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .beneficio-card {
+        gap: 8px;
+        padding: 10px 5px;
+    }
+
+    .beneficio-icono {
+        font-size: 23px;
+    }
+
+    .beneficio-card p {
+        font-size: 12px;
+    }
+}
