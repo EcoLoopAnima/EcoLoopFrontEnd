@@ -23,6 +23,9 @@ function CarruselPrincipal() {
 
   return (
     <div className="carrusel">
+
+      <h1>Productos destacados</h1>
+
       <button onClick={anterior}>❮</button>
 
         <div className="carrusel-fotos">
