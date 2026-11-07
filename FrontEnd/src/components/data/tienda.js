@@ -17,19 +17,34 @@ export const kitsEstudio = [
     id: 101,
     etiqueta: "Kit Esencial",
     nombre: "Kit Esencial",
-    descripcion: "Cuaderno reciclado + lápices + regla + borrador + cartuchera.",
+    descripcion:
+      "Cuaderno reciclado + lápices + regla + borrador + cartuchera.",
     precio: 590,
-    imagen: "/assets/cuadernolas.jpg",
-    incluye: ["Cuaderno reciclado", "Lápices", "Regla", "Borrador", "Cartuchera"],
+    imagen: "/assets/KitEsencial.jpg",
+    incluye: [
+      "Cuaderno reciclado",
+      "Lápices",
+      "Regla",
+      "Borrador",
+      "Cartuchera",
+    ],
   },
   {
     id: 102,
     etiqueta: "Kit Completo",
     nombre: "Kit Completo",
-    descripcion: "Todo lo que necesitás: cuadernos, lápices, carpeta, regla, lapicera y más.",
+    descripcion:
+      "Todo lo que necesitás: cuadernos, lápices, carpeta, regla, lapicera y más.",
     precio: 990,
     imagen: "/assets/kitEscolar.jpg",
-    incluye: ["2 cuadernos", "Lápices", "Carpeta", "Regla", "Lapicera", "Borrador"],
+    incluye: [
+      "2 cuadernos",
+      "Lápices",
+      "Carpeta",
+      "Regla",
+      "Lapicera",
+      "Borrador",
+    ],
   },
   {
     id: 103,
@@ -38,7 +53,12 @@ export const kitsEstudio = [
     descripcion: "Para dibujar, crear y soñar.",
     precio: 1190,
     imagen: "/assets/lapices.jpg",
-    incluye: ["Cuaderno de dibujo", "Lápices de colores", "Lápices de grafito", "Borrador"],
+    incluye: [
+      "Cuaderno de dibujo",
+      "Lápices de colores",
+      "Lápices de grafito",
+      "Borrador",
+    ],
   },
   {
     id: 104,
@@ -47,15 +67,26 @@ export const kitsEstudio = [
     descripcion: "Ideal para la oficina o para regalar.",
     precio: 1450,
     imagen: "/assets/lapiceras.jpg",
-    incluye: ["Cuaderno ejecutivo", "Lapiceras", "Portalápices", "Bolsa de tela"],
+    incluye: [
+      "Cuaderno ejecutivo",
+      "Lapiceras",
+      "Portalápices",
+      "Bolsa de tela",
+    ],
   },
 ];
 
 export const kitEmpresarial = {
   id: 201,
   nombre: "Kit Corporativo Eco",
-  descripcion: "Detalles sostenibles para empresas comprometidas con el planeta.",
+  descripcion:
+    "Detalles sostenibles para empresas comprometidas con el planeta.",
   precio: 1250,
-  imagen: "/assets/kitEmpresarial.jpg",
-  incluye: ["Cuaderno personalizable", "Lapicera ecológica", "Portalápices", "Bolsa de tela"],
+  imagen: "/assets/kitEmpresarialTote.png",
+  incluye: [
+    "Cuaderno personalizable",
+    "Lapicera ecológica",
+    "Portalápices",
+    "Bolsa de tela",
+  ],
 };
