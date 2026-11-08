@@ -1,16 +1,37 @@
-import { beneficios } from "../data/tienda";
+import "./BarraBeneficios.css";
+
 
 function BarraBeneficios() {
-  return (
-    <ul className="beneficios-barra">
-      {beneficios.map((b) => (
-        <li key={b.id}>
-          <span className="beneficio-icono">{b.icono}</span>
-          <span>{b.texto}</span>
-        </li>
-      ))}
-    </ul>
-  );
+    const beneficios = [
+        {
+            icono: "fa-solid fa-recycle",
+            texto: "Materiales reutilizados"
+        },
+        {
+            icono: "fa-solid fa-leaf",
+            texto: "Productos ecológicos"
+        },
+        {
+            icono: "fa-solid fa-graduation-cap",
+            texto: "Educación más accesible"
+        },
+        {
+            icono: "fa-solid fa-handshake",
+            texto: "Compras con impacto social"
+        }
+    ];
+
+    return (
+        <section className="beneficios-inicio">
+            {beneficios.map((beneficio, index) => (
+                <div className="beneficio-card" key={index}>
+                    <i className={`${beneficio.icono} beneficio-icono`}></i>
+                    <p>{beneficio.texto}</p>
+                </div>
+            ))}
+        </section>
+    );
 }
 
 export default BarraBeneficios;
+
