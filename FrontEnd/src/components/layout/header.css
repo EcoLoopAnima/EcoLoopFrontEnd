@@ -52,9 +52,9 @@ button img {
   width: 2.3rem; 
 }
 
-/*Buscador desplegable*/
+/* ---- Buscador desplegable ---- */
 .header-links button {
-  white-space: nowrap; 
+  white-space: nowrap; /* evita que el texto se parta al colapsar */
 }
 
 .header-extra {
@@ -68,8 +68,8 @@ button img {
 .lupa {
   display: flex;
   align-items: center;
-  margin-left: auto;         
-  width: 5.5rem;          
+  margin-left: auto;          /* anclada a la derecha */
+  width: 5.5rem;              /* = ancho del botón (2.3rem + padding 2rem) */
   height: 3.3rem;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -87,13 +87,14 @@ button img {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   opacity: 0;
-  transition: opacity 0.35s ease; 
+  transition: opacity 0.35s ease; /*Animación*/
 }
 
 .lupa button {
   flex-shrink: 0;
 }
 
+/* ---- Estado: buscando ---- */
 .header-buscando .header-links,
 .header-buscando .header-extra {
   max-width: 0;
@@ -107,38 +108,10 @@ button img {
 }
 
 .lupa-abierta {
-  width: 100%;            
+  width: 100%;                /* crece hacia la izquierda */
   border-color: var(--borde);
 }
 
 .lupa-abierta input {
   opacity: 1;
-}
-
-.barra-sesion {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.4rem 1.5rem;
-  background: var(--verde-claro);
-  color: var(--verde);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-}
-
-.barra-sesion button {
-  font-size: 0.9rem;
-  padding: 0.25rem 0.9rem;
-}
-
-.modalidad-btn {
-  border: 1px solid var(--verde);
-  border-radius: 999px;
-  background: #fff;
-}
-
-.modalidad-btn:hover {
-  background: var(--verde);
-  color: #fff;
 }

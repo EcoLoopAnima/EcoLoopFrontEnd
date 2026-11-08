@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import lupa from "../../assets/Lupa.png";   // antes: lupa.png
+import lupa from "../../assets/lupa.png";
 
 function Lupa({ abierto, setAbierto, onBuscar }) {
     const [texto, setTexto] = useState("");

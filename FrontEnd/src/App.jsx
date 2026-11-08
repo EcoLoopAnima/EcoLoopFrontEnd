@@ -8,7 +8,6 @@ import Impacto from "./components/pages/Impacto";
 import PuntosVida from "./components/pages/PuntosVida";
 import Nosotros from "./components/pages/Nosotros";
 import Login from "./components/pages/Login";
-import SeleccionModalidad from "./components/pages/SeleccionModalidad";
 import CarritoPage from "./components/pages/Carrito";
 import Carrito from "./components/ui/Carrito";
 
@@ -19,8 +18,6 @@ function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  const [usuario, setUsuario] = useState(null);     // null = sin sesión
-  const [modalidad, setModalidad] = useState(null); // null | "comprar" | "colaborar"
 
   function agregarAlCarrito(producto) {
     setCarrito((carritoActual) => [...carritoActual, producto]);
@@ -34,36 +31,12 @@ function App() {
     setMostrarCarrito(false);
   }
 
-  function iniciarSesion(nombre) {
-    setUsuario(nombre);
-  }
-
-  function cerrarSesion() {
-    setUsuario(null);
-    setModalidad(null);
-    setCarrito([]);
-    setMostrarCarrito(false);
-    setPage("inicio");
-  }
-
-  function elegirModalidad(id) {
-    setModalidad(id);
-    setPage("inicio"); // por ahora las dos llevan a la página principal
-  }
-
-  // Pantallas previas: sin usuario se ve el login, sin modalidad la selección
-  if (!usuario) return <Login onLogin={iniciarSesion} />;
-  if (!modalidad) return <SeleccionModalidad onElegir={elegirModalidad} />;
-
   return (
     <>
       <Header
         onNavigate={setPage}
         cantidadCarrito={carrito.length}
         abrirCarrito={abrirCarrito}
-        modalidad={modalidad}
-        onCambiarModalidad={() => setModalidad(null)}
-        onCerrarSesion={cerrarSesion}
       />
 
       {page === "inicio" && <Inicio />}
@@ -83,6 +56,7 @@ function App() {
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
       {page === "nosotros" && <Nosotros />}
+      {page === "login" && <Login />}
       {page === "carrito" && <CarritoPage carrito={carrito} />}
 
       {mostrarCarrito && (
