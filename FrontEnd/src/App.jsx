@@ -16,6 +16,8 @@ function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
   const [usuario, setUsuario] = useState(null);
+  const [puntos, setPuntos] = useState(0);     // saldo de puntos Vida
+  const [canjes, setCanjes] = useState([]);     // artículos ya canjeados
 
   function iniciarSesion(datos) { setUsuario(datos); }
   function cerrarSesion() { setUsuario(null); setPage("inicio"); }
@@ -49,6 +51,19 @@ function App() {
     setCarrito([]);
   }
 
+  // Comprar: 1 punto Vida por cada peso gastado
+function comprar(total) {
+  setPuntos(puntos + total);
+  setCarrito([]);
+}
+
+// Canjear: se descuentan tantos puntos como cuesta el artículo
+function canjear(producto) {
+  if (puntos < producto.precio) return;
+  setPuntos(puntos - producto.precio);
+  setCanjes([...canjes, producto]);
+}
+
   // cantidad total de unidades (para el numerito del header)
   const cantidadCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
 
@@ -70,7 +85,9 @@ function App() {
 
       {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
       {page === "impacto" && <Impacto />}
-      {page === "puntos" && <PuntosVida />}
+      {page === "puntos" && (
+  <PuntosVida usuario={usuario} puntos={puntos} canjes={canjes} canjear={canjear} onNavigate={setPage} />
+)}
       {page === "nosotros" && <Nosotros />}
       {page === "login" && (
         <Login usuario={usuario} onLogin={iniciarSesion} onLogout={cerrarSesion} onNavigate={setPage} />

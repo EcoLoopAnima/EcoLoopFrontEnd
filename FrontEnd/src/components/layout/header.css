@@ -144,3 +144,26 @@ button img {
   align-items: center;
   justify-content: center;
 }
+
+.barra-sesion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.3rem 1.5rem;
+  background: var(--verde);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+}
+
+.barra-sesion button {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2rem 0.8rem;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+}
+
+.barra-sesion button:hover { background: rgba(255, 255, 255, 0.15); }

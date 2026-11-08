@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./carritoPage.css";
-import Boton from "../ui/Botones";
+import Botones from "../ui/Botones";
 
-function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCarrito, onNavigate }) {
-  const [comprado, setComprado] = useState(false);
+function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCarrito, comprar, onNavigate }) {
+    const [comprado, setComprado] = useState(false);
+    const [ganados, setGanados] = useState(0);
 
   const total = carrito.reduce((suma, item) => suma + item.precio * item.cantidad, 0);
 
@@ -12,7 +13,8 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
       onNavigate("login"); // para comprar hay que iniciar sesión
       return;
     }
-    vaciarCarrito();
+    comprar(total);      // suma los puntos Vida y vacía el carrito
+    setGanados(total);
     setComprado(true);
   }
 
@@ -21,8 +23,10 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
       <main className="cart-page">
         <section className="cart-vacio">
           <h2>¡Gracias por tu compra, {usuario.nombre}!</h2>
+          <p className="cart-puntos">Ganaste <strong>{ganados} puntos Vida</strong></p>
           <p>Con cada compra ayudás a que más estudiantes tengan útiles.</p>
-          <Boton onClick={() => onNavigate("tienda")}>Seguir comprando</Boton>
+          <Botones onClick={() => onNavigate("puntos")}>Canjear mis puntos</Botones>
+          <Botones variante="secundario" onClick={() => onNavigate("tienda")}>Seguir comprando</Botones>
         </section>
       </main>
     );
@@ -34,7 +38,7 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
         <section className="cart-vacio">
           <h2>Tu carrito está vacío</h2>
           <p>Todavía no agregaste nada. Mirá lo que tenemos en la tienda.</p>
-          <Boton onClick={() => onNavigate("tienda")}>Ir a la tienda</Boton>
+          <Botones onClick={() => onNavigate("tienda")}>Ir a la tienda</Botones>
         </section>
       </main>
     );
@@ -76,13 +80,16 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
             <span>Total</span>
             <strong>$ {total} UYU</strong>
           </p>
-          <Boton onClick={finalizar}>Finalizar compra</Boton>
-          <Boton variante="secundario" onClick={vaciarCarrito}>Vaciar carrito</Boton>
-          {!usuario && <small>Tenés que iniciar sesión para finalizar la compra.</small>}
-        </aside>
+          <Botones onClick={finalizar}>Finalizar compra</Botones>
+          <Botones variante="secundario" onClick={vaciarCarrito}>Vaciar carrito</Botones>
+            {usuario ? (
+            <small className="cart-aviso">Ganás {total} puntos Vida con esta compra.</small>
+            ) : (
+            <small>Tenés que iniciar sesión para finalizar la compra.</small>
+            )}        </aside>
       </div>
     </main>
   );
-}
+}   
 
 export default Carrito;

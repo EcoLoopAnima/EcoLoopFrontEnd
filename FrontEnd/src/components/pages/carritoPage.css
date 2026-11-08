@@ -108,3 +108,6 @@
   .cart-item img { width: 64px; height: 64px; }
   .cart-subtotal { text-align: left; }
 }
+
+.cart-resumen .cart-aviso { color: var(--verde); font-weight: 600; }
+.cart-puntos { color: var(--verde); font-size: 1.1rem; }
