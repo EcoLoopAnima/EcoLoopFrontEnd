@@ -40,7 +40,7 @@ function App() {
       {page === "inicio" && (
   <>
     <Inicio />
-    <CarruselPrincipal />
+    
   </>
 )}
 

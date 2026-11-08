@@ -1,17 +1,26 @@
+
 import BeneficiosInicio from "../sections/BeneficiosInicio";
 import BannerInicio from "../sections/BannerInicio";
 import ComoFunciona from "../sections/ComoFunciona";
+import CarruselPrincipal from "../sections/CarruselPrincipal";
+import Footer from "../layout/Footer";
 
 function Inicio() {
   return (
-    <main>
+    <main className="inicio">
+
       <BannerInicio />
 
       <BeneficiosInicio />
 
       <ComoFunciona />
 
-      {/* Aquí continúa el contenido de Inicio */}
+      <CarruselPrincipal />
+
+      {/* Aquí agregaremos futuras secciones de Inicio */}
+
+      <Footer />
+
     </main>
   );
 }

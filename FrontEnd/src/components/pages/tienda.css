@@ -3,7 +3,7 @@
 .tienda {
   font-family: 'Montserrat', sans-serif;
   color: #2b3a33;
-  padding-bottom: 3rem;
+   padding-bottom: 0;
 }
 
 .titulo-seccion {
@@ -321,3 +321,4 @@
     grid-template-columns: 1fr;
   }
 }
+
