@@ -5,7 +5,7 @@ import usuario from "../../assets/usuario.png";
 import carrito from "../../assets/carrito.png";
 import Lupa from "../ui/Lupa";
 
-function Header({ onNavigate }) {
+function Header({ onNavigate, usuario: sesion, onLogout, cantidadCarrito = 0 }) {
     const [buscando, setBuscando] = useState(false);
 
     return (
@@ -36,9 +36,18 @@ function Header({ onNavigate }) {
                     <button aria-label="Sign in" onClick={() => onNavigate("login")}>
                         <img src={usuario} alt="" />
                     </button>
+                    {sesion && (
+    <button className="header-salir" onClick={onLogout}>
+        Cerrar sesión
+    </button>
+)}
                     <button aria-label="Carrito" onClick={() => onNavigate("carrito")}>
-                        <img src={carrito} alt="" />
-                    </button>
+    <img src={carrito} alt="" />
+    {cantidadCarrito > 0 && (
+        <span className="header-contador">{cantidadCarrito}</span>
+    )}
+</button>
+                    
                 </div>
             </div>
 
