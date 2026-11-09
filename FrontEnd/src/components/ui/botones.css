@@ -1,0 +1,28 @@
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primario {
+  background: var(--verde);
+  color: #fff;
+}
+
+.btn-primario:hover {
+  background: #1a3d2d;
+}
+
+.btn-secundario {
+  background: var(--verde-claro);
+  color: var(--verde);
+}
+
+.btn-secundario:hover {
+  background: #d3e4d8;
+}
