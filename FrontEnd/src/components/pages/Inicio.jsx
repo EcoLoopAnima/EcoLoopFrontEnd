@@ -1,14 +1,5 @@
-
-import BannerInicio from "../sections/BannerInicio";
-
 function Inicio() {
-  return (
-    <main>
-      <BannerInicio />
-
-      {/* Aquí continúa el contenido de Inicio */}
-    </main>
-  );
+    return <h2>Página Inicio</h2>;
 }
 
 export default Inicio;
