@@ -18,6 +18,7 @@ function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
+  const [user, setUser] = useState(localStorage.getItem("sesion")); // NUEVO
 
   function agregarAlCarrito(producto) {
     setCarrito((carritoActual) => [...carritoActual, producto]);
@@ -37,10 +38,10 @@ function App() {
         onNavigate={setPage}
         cantidadCarrito={carrito.length}
         abrirCarrito={abrirCarrito}
+        user={user} // NUEVO
+        setUser={setUser} // NUEVO
       />
-
       {page === "inicio" && <Inicio />}
-
       {page === "tienda" && (
         <>
           <Tienda agregarAlCarrito={agregarAlCarrito} />
@@ -52,13 +53,14 @@ function App() {
           </div>
         </>
       )}
-
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
       {page === "nosotros" && <Nosotros />}
-      {page === "login" && <Login />}
+      {page === "login" && (
+        <Login onNavigate={setPage} setUser={setUser} />
+      )}{" "}
+      {/* NUEVO: props */}
       {page === "carrito" && <CarritoPage carrito={carrito} />}
-
       {mostrarCarrito && (
         <Carrito carrito={carrito} cerrarCarrito={cerrarCarrito} />
       )}
