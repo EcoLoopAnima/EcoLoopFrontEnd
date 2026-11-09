@@ -12,7 +12,7 @@ const productos = [
     nombre: "Kit Empresarial",
     descripcion: "Conjunto de artículos de papelería ideales para oficinas.",
     precio: 650,
-    imagen: "/assets/kitEmpresarial.jpg",
+    imagen: "/assets/kitoficina.png",
   },
   {
     id: 3,
@@ -38,9 +38,58 @@ const productos = [
   {
     id: 6,
     nombre: "Gomas de borrar",
-    descripcion: "Gomas de borrar ecológicas y reutilizables.",
+    descripcion: "Gomas de borrar ecológicas.",
     precio: 40,
     imagen: "/assets/gomasDeBorrar.jpg",
+  },
+  {
+    id: 7,
+    nombre: "Colores",
+    descripcion: "Materiales para pintar y crear.",
+    precio: 120,
+    imagen: "/assets/colores.jpg",
+  },
+  {
+    id: 8,
+    nombre: "Juegos de reglas",
+    descripcion: "Set de reglas para dibujo y geometría.",
+    precio: 100,
+    imagen: "/assets/juegosDeReglas.jpg",
+  },
+  {
+    id: 9,
+    nombre: "Post-its",
+    descripcion: "Notas adhesivas para organizar tus ideas.",
+    precio: 90,
+    imagen: "/assets/postIts.jpg",
+  },
+  {
+    id: 10,
+    nombre: "Agenda",
+    descripcion: "Agenda para organizar tus actividades.",
+    precio: 250,
+    imagen: "/assets/agenda.jpg",
+  },
+  {
+    id: 11,
+    nombre: "Calendario",
+    descripcion: "Calendario práctico para planificar tu año.",
+    precio: 180,
+    imagen: "/assets/calendario.jpg",
+  },
+  {
+    id: 12,
+    nombre: "Lápices de colores",
+    descripcion: "Lápices de colores para dibujar y pintar.",
+    precio: 150,
+    imagen: "/assets/lapicesDeColores.jpg",
+  },
+  {
+    id: 13,
+    nombre: "Sacapuntas",
+    descripcion: "Sacapuntas práctico para uso diario.",
+    precio: 60,
+    imagen: "/assets/sacapuntas.jpg",
   },
 ];
 

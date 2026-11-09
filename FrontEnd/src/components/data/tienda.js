@@ -52,7 +52,7 @@ export const kitsEstudio = [
     nombre: "Kit Creativo",
     descripcion: "Para dibujar, crear y soñar.",
     precio: 1190,
-    imagen: "/assets/lapices.jpg",
+    imagen: "/assets/kit.jpg",
     incluye: [
       "Cuaderno de dibujo",
       "Lápices de colores",
@@ -66,12 +66,33 @@ export const kitsEstudio = [
     nombre: "Kit Office",
     descripcion: "Ideal para la oficina o para regalar.",
     precio: 1450,
-    imagen: "/assets/lapiceras.jpg",
+    imagen: "/assets/kitOficina.png",
     incluye: [
       "Cuaderno ejecutivo",
       "Lapiceras",
       "Portalápices",
       "Bolsa de tela",
+    ],
+  },
+  {
+    id: 105,
+    etiqueta: "Kit Universitario",
+    nombre: "Kit Universitario Eco",
+    descripcion:
+      "Todo lo que necesitás para la facultad: organización, creatividad y materiales sustentables para acompañarte durante tus estudios.",
+    precio: 1890,
+    imagen: "/assets/kitUniversitario.jpg",
+    incluye: [
+      "Mochila ecológica EcoLoop",
+      "Cartuchera reutilizable",
+      "Botella reutilizable",
+      "Portalápices de cartón reciclado",
+      "Lápices de colores",
+      "Lápices de grafito",
+      "Goma de borrar",
+      "Sacapuntas",
+      "Regla de madera",
+      "Cuaderno de apuntes reciclado",
     ],
   },
 ];
