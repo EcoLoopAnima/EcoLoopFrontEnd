@@ -81,7 +81,7 @@ export const kitsEstudio = [
     descripcion:
       "Todo lo que necesitás para la facultad: organización, creatividad y materiales sustentables para acompañarte durante tus estudios.",
     precio: 1890,
-    imagen: "/assets/kitUniversitario.jpg",
+    imagen: "public/assets/kitUniversitario.jpg",
     incluye: [
       "Mochila ecológica EcoLoop",
       "Cartuchera reutilizable",
