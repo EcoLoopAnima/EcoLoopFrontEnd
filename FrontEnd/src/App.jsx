@@ -17,7 +17,6 @@ function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem("sesion")); // NUEVO
 
   function agregarAlCarrito(producto) {
     setCarrito((carritoActual) => [...carritoActual, producto]);
@@ -37,33 +36,23 @@ function App() {
         onNavigate={setPage}
         cantidadCarrito={carrito.length}
         abrirCarrito={abrirCarrito}
-        user={user} // NUEVO
-        setUser={setUser} // NUEVO
       />
-      {page === "inicio" && (
-        <>
-          <Inicio />
-          <CarruselPrincipal agregarAlCarrito={agregarAlCarrito} />
-        </>
-      )}
-      {page === "tienda" && (
-        <>
-          <Tienda agregarAlCarrito={agregarAlCarrito} />
 
-          <div>
-            <h2>Conocé nuestra Tienda</h2>
-            <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
-          </div>
-        </>
-      )}
+      {page === "inicio" && (
+  <>
+    <Inicio />
+    <CarruselPrincipal />
+  </>
+)}
+
+      {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
+
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
       {page === "nosotros" && <Nosotros />}
-      {page === "login" && (
-        <Login onNavigate={setPage} setUser={setUser} />
-      )}{" "}
-      {/* NUEVO: props */}
+      {page === "login" && <Login />}
       {page === "carrito" && <CarritoPage carrito={carrito} />}
+
       {mostrarCarrito && (
         <Carrito carrito={carrito} cerrarCarrito={cerrarCarrito} />
       )}
