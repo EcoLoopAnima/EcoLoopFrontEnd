@@ -11,6 +11,9 @@ import Login from "./components/pages/Login";
 import CarritoPage from "./components/pages/Carrito";
 import Carrito from "./components/ui/Carrito";
 
+import CarruselPrincipal from "./components/sections/CarruselPrincipal";
+import CarruselCarrito from "./components/sections/CarruselCarrito";
+
 function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
