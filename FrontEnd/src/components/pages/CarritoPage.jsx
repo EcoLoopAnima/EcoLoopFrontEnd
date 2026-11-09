@@ -2,18 +2,29 @@ import { useState } from "react";
 import "./carritoPage.css";
 import Botones from "../ui/Botones";
 
-function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCarrito, comprar, onNavigate }) {
-    const [comprado, setComprado] = useState(false);
-    const [ganados, setGanados] = useState(0);
+function CarritoPage({
+  carrito,
+  usuario,
+  cambiarCantidad,
+  quitarDelCarrito,
+  vaciarCarrito,
+  comprar,
+  onNavigate,
+}) {
+  const [comprado, setComprado] = useState(false);
+  const [ganados, setGanados] = useState(0);
 
-  const total = carrito.reduce((suma, item) => suma + item.precio * item.cantidad, 0);
+  const total = carrito.reduce(
+    (suma, item) => suma + item.precio * item.cantidad,
+    0,
+  );
 
   function finalizar() {
     if (!usuario) {
       onNavigate("login"); // para comprar hay que iniciar sesión
       return;
     }
-    comprar(total);      // suma los puntos Vida y vacía el carrito
+    comprar(total); // suma los puntos Vida y vacía el carrito
     setGanados(total);
     setComprado(true);
   }
@@ -23,10 +34,16 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
       <main className="cart-page">
         <section className="cart-vacio">
           <h2>¡Gracias por tu compra, {usuario.nombre}!</h2>
-          <p className="cart-puntos">Ganaste <strong>{ganados} puntos Vida</strong></p>
+          <p className="cart-puntos">
+            Ganaste <strong>{ganados} puntos Vida</strong>
+          </p>
           <p>Con cada compra ayudás a que más estudiantes tengan útiles.</p>
-          <Botones onClick={() => onNavigate("puntos")}>Canjear mis puntos</Botones>
-          <Botones variante="secundario" onClick={() => onNavigate("tienda")}>Seguir comprando</Botones>
+          <Botones onClick={() => onNavigate("puntos")}>
+            Canjear mis puntos
+          </Botones>
+          <Botones variante="secundario" onClick={() => onNavigate("tienda")}>
+            Seguir comprando
+          </Botones>
         </section>
       </main>
     );
@@ -60,14 +77,30 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
               </div>
 
               <div className="cart-cantidad">
-                <button onClick={() => cambiarCantidad(item.id, -1)} aria-label="Restar uno">−</button>
+                <button
+                  onClick={() => cambiarCantidad(item.id, -1)}
+                  aria-label="Restar uno"
+                >
+                  −
+                </button>
                 <span>{item.cantidad}</span>
-                <button onClick={() => cambiarCantidad(item.id, 1)} aria-label="Sumar uno">+</button>
+                <button
+                  onClick={() => cambiarCantidad(item.id, 1)}
+                  aria-label="Sumar uno"
+                >
+                  +
+                </button>
               </div>
 
-              <strong className="cart-subtotal">$ {item.precio * item.cantidad}</strong>
+              <strong className="cart-subtotal">
+                $ {item.precio * item.cantidad}
+              </strong>
 
-              <button className="cart-quitar" onClick={() => quitarDelCarrito(item.id)} aria-label={`Quitar ${item.nombre}`}>
+              <button
+                className="cart-quitar"
+                onClick={() => quitarDelCarrito(item.id)}
+                aria-label={`Quitar ${item.nombre}`}
+              >
                 ✕
               </button>
             </li>
@@ -81,15 +114,20 @@ function Carrito({ carrito, usuario, cambiarCantidad, quitarDelCarrito, vaciarCa
             <strong>$ {total} UYU</strong>
           </p>
           <Botones onClick={finalizar}>Finalizar compra</Botones>
-          <Botones variante="secundario" onClick={vaciarCarrito}>Vaciar carrito</Botones>
-            {usuario ? (
-            <small className="cart-aviso">Ganás {total} puntos Vida con esta compra.</small>
-            ) : (
+          <Botones variante="secundario" onClick={vaciarCarrito}>
+            Vaciar carrito
+          </Botones>
+          {usuario ? (
+            <small className="cart-aviso">
+              Ganás {total} puntos Vida con esta compra.
+            </small>
+          ) : (
             <small>Tenés que iniciar sesión para finalizar la compra.</small>
-            )}        </aside>
+          )}{" "}
+        </aside>
       </div>
     </main>
   );
-}   
+}
 
-export default Carrito;
+export default CarritoPage;
