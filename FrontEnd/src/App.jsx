@@ -12,10 +12,14 @@ import CarritoPage from "./components/pages/Carrito";
 import Carrito from "./components/ui/Carrito";
 import CarruselPrincipal from "./components/sections/CarruselPrincipal";
 
+import CarruselPrincipal from "./components/sections/CarruselPrincipal";
+import CarruselCarrito from "./components/sections/CarruselCarrito";
+
 function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
+  const [user, setUser] = useState(localStorage.getItem("sesion")); // NUEVO
 
   function agregarAlCarrito(producto) {
     setCarrito((carritoActual) => [...carritoActual, producto]);
@@ -35,23 +39,33 @@ function App() {
         onNavigate={setPage}
         cantidadCarrito={carrito.length}
         abrirCarrito={abrirCarrito}
+        user={user} // NUEVO
+        setUser={setUser} // NUEVO
       />
-
       {page === "inicio" && (
-  <>
-    <Inicio />
-    
-  </>
-)}
+        <>
+          <Inicio />
+          <CarruselPrincipal agregarAlCarrito={agregarAlCarrito} />
+        </>
+      )}
+      {page === "tienda" && (
+        <>
+          <Tienda agregarAlCarrito={agregarAlCarrito} />
 
-      {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
-
+          <div>
+            <h2>Conocé nuestra Tienda</h2>
+            <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
+          </div>
+        </>
+      )}
       {page === "impacto" && <Impacto />}
       {page === "puntos" && <PuntosVida />}
       {page === "nosotros" && <Nosotros />}
-      {page === "login" && <Login />}
+      {page === "login" && (
+        <Login onNavigate={setPage} setUser={setUser} />
+      )}{" "}
+      {/* NUEVO: props */}
       {page === "carrito" && <CarritoPage carrito={carrito} />}
-
       {mostrarCarrito && (
         <Carrito carrito={carrito} cerrarCarrito={cerrarCarrito} />
       )}

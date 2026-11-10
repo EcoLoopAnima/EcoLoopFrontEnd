@@ -1,170 +1,130 @@
 import "./Nosotros.css";
+import banner from "../../assets/bannerInicio.jpg";
 
 function Nosotros() {
   return (
     <main className="nosotros">
+      {/* PRESENTACIÓN INSTITUCIONAL */}
 
-      
-{/* PRESENTACIÓN INSTITUCIONAL */}
+      <section className="nosotros-presentacion">
+        <div className="nosotros-banner">
+          <img src={banner} alt="Un futuro con más oportunidades" />
+        </div>
 
-<section className="nosotros-presentacion">
+        <div className="nosotros-texto">
+          <h1>¿Quiénes somos?</h1>
 
-    <div className="nosotros-banner">
-        <img
-            src="src/assets/moña.jpg"
-            alt="Un futuro con más oportunidades"
-        />
-    </div>
+          <p>
+            EcoLoop nace de una idea: transformar materiales que todavía tienen
+            vida útil en nuevas oportunidades para aprender.
+          </p>
 
-    <div className="nosotros-texto">
+          <p>
+            Creemos que el acceso a los materiales escolares es fundamental para
+            una educación más equitativa y que muchos recursos que dejamos de
+            utilizar todavía pueden tener valor.
+          </p>
+        </div>
+      </section>
 
-        <h1>¿Quiénes somos?</h1>
+      {/* NUESTRA MOTIVACIÓN */}
 
-        <p>
-            EcoLoop nace de una idea: transformar materiales
-            que todavía tienen vida útil en nuevas oportunidades
-            para aprender.
-        </p>
-
-        <p>
-            Creemos que el acceso a los materiales escolares
-            es fundamental para una educación más equitativa
-            y que muchos recursos que dejamos de utilizar
-            todavía pueden tener valor.
-        </p>
-
-    </div>
-
-</section>
-
-     
-{/* NUESTRA MOTIVACIÓN */}
-
-<section className="nosotros-motivacion">
-
-    <div className="motivacion-contenido">
-
-        <div className="motivacion-texto">
-
+      <section className="nosotros-motivacion">
+        <div className="motivacion-contenido">
+          <div className="motivacion-texto">
             <h2>¿Qué nos motiva?</h2>
 
             <p>
-                Muchas veces, materiales escolares que todavía
-                pueden utilizarse terminan descartados, mientras
-                que otras personas encuentran dificultades para
-                acceder a los útiles que necesitan.
+              Muchas veces, materiales escolares que todavía pueden utilizarse
+              terminan descartados, mientras que otras personas encuentran
+              dificultades para acceder a los útiles que necesitan.
             </p>
 
             <p>
-                En EcoLoop buscamos conectar estas dos realidades,
-                promoviendo la reutilización y generando nuevas
-                oportunidades a través del intercambio.
+              En EcoLoop buscamos conectar estas dos realidades, promoviendo la
+              reutilización y generando nuevas oportunidades a través del
+              intercambio.
             </p>
 
             <span className="motivacion-frase">
-                Cada material puede tener una nueva oportunidad.
+              Cada material puede tener una nueva oportunidad.
             </span>
+          </div>
 
-        </div>
-
-        <div className="motivacion-imagen">
+          <div className="motivacion-imagen">
             <img
-                src="/assets/kitEscolar.jpg"
-                alt="Materiales escolares reutilizables"
+              src="/assets/kitEscolar.jpg"
+              alt="Materiales escolares reutilizables"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* NUESTROS PROPÓSITOS */}
+
+      <section className="propositos">
+        <div className="propositos-encabezado">
+          <h2>Nuestros propósitos</h2>
+
+          <p>Pequeñas acciones que construyen un futuro más sostenible.</p>
         </div>
 
-    </div>
-
-</section>
-
-     
-
-{/* NUESTROS PROPÓSITOS */}
-
-<section className="propositos">
-
-    <div className="propositos-encabezado">
-        <h2>Nuestros propósitos</h2>
-
-        <p>
-            Pequeñas acciones que construyen
-            un futuro más sostenible.
-        </p>
-    </div>
-
-    <div className="propositos-contenedor">
-
-        <article className="proposito-card">
-
+        <div className="propositos-contenedor">
+          <article className="proposito-card">
             <div className="proposito-icono">
-    <i className="fa-solid fa-recycle"></i>
-</div>
+              <i className="fa-solid fa-recycle"></i>
+            </div>
             <h3>Reutilizar</h3>
             <p>
-                Reducir el desperdicio y aprovechar materiales
-                que todavía pueden utilizarse.
+              Reducir el desperdicio y aprovechar materiales que todavía pueden
+              utilizarse.
             </p>
-        </article>
+          </article>
 
-        <article className="proposito-card">
+          <article className="proposito-card">
             <div className="proposito-icono">
-    <i className="fa-solid fa-graduation-cap"></i>
-</div>
+              <i className="fa-solid fa-graduation-cap"></i>
+            </div>
             <h3>Educar</h3>
-            <p>
-                Promover una educación más accesible
-                y consciente.
-            </p>
-        </article>
+            <p>Promover una educación más accesible y consciente.</p>
+          </article>
 
-        <article className="proposito-card">
+          <article className="proposito-card">
             <div className="proposito-icono">
-    <i className="fa-solid fa-handshake"></i>
-</div>
+              <i className="fa-solid fa-handshake"></i>
+            </div>
             <h3>Compartir</h3>
-            <p>
-                Generar oportunidades a través
-                del intercambio.
-            </p>
-        </article>
+            <p>Generar oportunidades a través del intercambio.</p>
+          </article>
 
-        <article className="proposito-card">
+          <article className="proposito-card">
             <div className="proposito-icono">
-    <i className="fa-solid fa-book-open"></i>
-</div>
+              <i className="fa-solid fa-book-open"></i>
+            </div>
             <h3>Incluir</h3>
             <p>
-                Contribuir a que más estudiantes
-                accedan a materiales escolares.
+              Contribuir a que más estudiantes accedan a materiales escolares.
             </p>
-        </article>
-
-    </div>
-
-</section>
+          </article>
+        </div>
+      </section>
 
       {/* NUESTRA PROPUESTA */}
 
-<section className="nosotros-propuesta">
+      <section className="nosotros-propuesta">
+        <div className="propuesta-encabezado">
+          <h2>¿Cómo lo hacemos?</h2>
+          <p>Dos formas de transformar recursos en nuevas oportunidades.</p>
+        </div>
 
-    <div className="propuesta-encabezado">
-        <h2>¿Cómo lo hacemos?</h2>
-        <p>
-            Dos formas de transformar recursos en nuevas oportunidades.
-        </p>
-    </div>
+        <div className="propuesta-tarjetas">
+          {/* CARD CANJE */}
 
-    <div className="propuesta-tarjetas">
-
-        {/* CARD CANJE */}
-
-        <article className="propuesta-card propuesta-canje">
-
+          <article className="propuesta-card propuesta-canje">
             <span className="propuesta-numero">01</span>
 
             <div className="propuesta-icono">
-                <i className="fa-solid fa-arrows-rotate"></i>
+              <i className="fa-solid fa-arrows-rotate"></i>
             </div>
 
             <h3>Canje de materiales</h3>
@@ -172,26 +132,22 @@ function Nosotros() {
             <h4>Lo que ya no usás puede servirle a alguien más.</h4>
 
             <p>
-                Recibimos materiales reutilizables para darles
-                una nueva oportunidad de uso y fomentar
-                el intercambio responsable.
+              Recibimos materiales reutilizables para darles una nueva
+              oportunidad de uso y fomentar el intercambio responsable.
             </p>
 
             <span className="propuesta-detalle">
-                REUTILIZAR · COMPARTIR · TRANSFORMAR
+              REUTILIZAR · COMPARTIR · TRANSFORMAR
             </span>
+          </article>
 
-        </article>
+          {/* CARD TIENDA */}
 
-
-        {/* CARD TIENDA */}
-
-        <article className="propuesta-card propuesta-tienda">
-
+          <article className="propuesta-card propuesta-tienda">
             <span className="propuesta-numero">02</span>
 
             <div className="propuesta-icono">
-                <i className="fa-solid fa-bag-shopping"></i>
+              <i className="fa-solid fa-bag-shopping"></i>
             </div>
 
             <h3>Nuestra tienda</h3>
@@ -199,28 +155,24 @@ function Nosotros() {
             <h4>Útiles con una nueva historia.</h4>
 
             <p>
-                Ofrecemos productos y kits escolares elaborados
-                a partir de materiales reciclados, acercando
-                alternativas responsables para aprender.
+              Ofrecemos productos y kits escolares elaborados a partir de
+              materiales reciclados, acercando alternativas responsables para
+              aprender.
             </p>
 
             <span className="propuesta-detalle">
-                RECICLAR · COMPRAR · EDUCAR
+              RECICLAR · COMPRAR · EDUCAR
             </span>
-
-        </article>
-
-    </div>
-
-</section>
+          </article>
+        </div>
+      </section>
 
       {/* Cierre */}
-<footer className="nosotros-cierre">
-  <p className="cierre-frase">Pequeñas acciones, grandes cambios.</p>
-  <p className="cierre-slogan">Reciclá, comprá, educá.</p>
-  <span className="cierre-marca">EcoLoop</span>
-</footer>
-
+      <footer className="nosotros-cierre">
+        <p className="cierre-frase">Pequeñas acciones, grandes cambios.</p>
+        <p className="cierre-slogan">Reciclá, comprá, educá.</p>
+        <span className="cierre-marca">EcoLoop</span>
+      </footer>
     </main>
   );
 }
