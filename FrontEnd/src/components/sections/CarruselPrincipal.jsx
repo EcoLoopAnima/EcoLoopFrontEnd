@@ -4,8 +4,8 @@ import "./CarruselPrincipal.css";
 function CarruselPrincipal() {
     const fotos = [
         "/assets/kitEscolar.jpg",
-        "/assets/kitEmpresarial.jpg",
-        "/assets/cuadernolas.jpg",
+        "/assets/kitEmpresarialTote.png",
+        "/assets/Cuaderno.jpg",
         "/assets/lapiceras.jpg",
         "/assets/lapices.jpg",
         "/assets/gomasDeBorrar.jpg",
