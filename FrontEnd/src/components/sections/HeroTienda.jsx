@@ -10,14 +10,6 @@ function HeroTienda() {
           lo que necesitás para tu día a día.
         </p>
 
-        <ul className="hero-iconos">
-          {heroIconos.map((item) => (
-            <li key={item.id}>
-              <span className="icono-circulo">{item.icono}</span>
-              <span>{item.texto}</span>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div className="hero-foto">

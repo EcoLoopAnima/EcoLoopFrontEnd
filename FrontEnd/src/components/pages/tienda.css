@@ -3,7 +3,7 @@
 .tienda {
   font-family: "Montserrat", sans-serif;
   color: #2b3a33;
-  padding-bottom: 3rem;
+   padding-bottom: 0;
 }
 
 .titulo-seccion {
@@ -311,3 +311,28 @@
 .mini-carrito:hover {
   background: #1a3d2d;
 }
+
+/* ---------- Pantallas chicas ---------- */
+@media (max-width: 900px) {
+  .hero-tienda {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .hero-texto {
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  .hero-foto {
+    height: 220px;
+  }
+
+  .tienda-doble {
+    grid-template-columns: 1fr;
+  }
+
+  .kit-horizontal {
+    grid-template-columns: 1fr;
+  }
+}
+

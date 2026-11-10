@@ -1,0 +1,108 @@
+
+.como-funciona {
+    width: 100%;
+    padding: 35px 5%;
+    box-sizing: border-box;
+    background-color: #f8f5ec;
+    color: #354d36;
+}
+
+.como-funciona h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    text-align: left;
+    margin: 0 0 30px 0;
+    color: #294832;
+}
+
+.pasos-contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.paso {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.paso-imagen {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background-color: #e5e9d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.paso-imagen i {
+    font-size: 40px;
+    color: #426746;
+}
+
+.paso h3 {
+    font-size: 17px;
+    color: #294832;
+    margin: 5px 0 8px;
+}
+
+.paso p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4b5145;
+    max-width: 220px;
+    margin: 0;
+}
+
+.flecha-paso {
+    position: absolute;
+    right: -20px;
+    top: 48px;
+    font-size: 23px;
+    color: #55775a;
+}
+
+/* CELULARES */
+@media (max-width: 650px) {
+
+    .como-funciona {
+        padding: 25px 15px;
+    }
+
+    .como-funciona h2 {
+        font-size: 23px;
+        text-align: center;
+    }
+
+    .pasos-contenedor {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .paso-imagen {
+        width: 80px;
+        height: 80px;
+    }
+
+    .paso-imagen i {
+        font-size: 30px;
+    }
+
+    .flecha-paso {
+        display: none;
+    }
+
+    .paso h3 {
+        font-size: 14px;
+    }
+
+    .paso p {
+        font-size: 12px;
+    }
+}

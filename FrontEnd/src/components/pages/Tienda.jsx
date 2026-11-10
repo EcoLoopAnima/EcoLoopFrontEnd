@@ -5,6 +5,7 @@ import HeroTienda from "../sections/HeroTienda";
 import BarraBeneficios from "../sections/BarraBeneficios";
 import KitCard from "../ui/KitCard";
 import ProductoMini from "../ui/ProductoMini";
+import Footer from "../layout/Footer";
 
 // Los productos sueltos son los que ya tenías en productos.js (sin los dos kits)
 const individuales = productos.slice(2);
@@ -38,8 +39,12 @@ function Tienda({ agregarAlCarrito }) {
             ))}
           </div>
         </section>
+
       </div>
+      <Footer />
     </div>
+
+    
   );
 }
 

@@ -4,7 +4,7 @@ function BannerInicio() {
   return (
     <section className="bannerinicio">
       <img
-        src="src/assets/bannerInicio.jpg"
+        src="src/assets/BannerInicioRecicle.jpg"
         alt="Banner de EcoLoop"
       />
     </section>
