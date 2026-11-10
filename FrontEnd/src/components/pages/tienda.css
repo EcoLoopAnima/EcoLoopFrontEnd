@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap");
 
 .tienda {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #2b3a33;
    padding-bottom: 0;
 }
 
 .titulo-seccion {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 500;
   font-size: 1.7rem;
   color: var(--verde);
@@ -15,6 +15,7 @@
 }
 
 /* ---------- Banner principal ---------- */
+
 .hero-tienda {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -29,7 +30,7 @@
 }
 
 .hero-texto h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 500;
   font-size: 2.4rem;
   line-height: 1.15;
@@ -88,6 +89,7 @@
 }
 
 /* ---------- Franja de beneficios ---------- */
+
 .beneficios-barra {
   display: flex;
   justify-content: space-around;
@@ -113,33 +115,35 @@
 }
 
 /* ---------- Secciones ---------- */
+
 .tienda-seccion {
   padding: 1rem 3% 1.5rem;
 }
 
+/* ---------- Kits: todos en una fila ---------- */
+
 .grid-kits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
 }
 
-.tienda-doble {
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 2rem;
-  padding: 1rem 3% 0;
-}
+/* ---------- Tarjetas de kits ---------- */
 
-/* ---------- Tarjeta de kit ---------- */
 .kit-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  height: 100%;
   background: #fff;
   border: 1px solid #e9e3d6;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(35, 80, 59, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .kit-card:hover {
@@ -149,7 +153,8 @@
 
 .kit-foto {
   position: relative;
-  height: 150px;
+  height: 170px;
+  flex-shrink: 0;
 }
 
 .kit-foto img {
@@ -216,10 +221,18 @@
 }
 
 .kit-info > .btn {
-  margin-top: 0.6rem;
+  margin-top: auto;
 }
 
-/* Kit empresarial: tarjeta horizontal */
+/* ---------- Kit empresarial horizontal ---------- */
+
+.tienda-doble {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 2rem;
+  padding: 1rem 3% 0;
+}
+
 .kit-horizontal {
   display: grid;
   grid-template-columns: 230px 1fr;
@@ -239,7 +252,8 @@
   gap: 1.5rem;
 }
 
-/* ---------- Producto individual (tarjeta chica) ---------- */
+/* ---------- Productos individuales ---------- */
+
 .grid-mini {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));

@@ -1,85 +1,73 @@
 import { useState } from "react";
 import "./login.css";
+import Boton from "../ui/Botones";
+import logo from "../../assets/Logo4.png";
 
-function Login({ onNavigate, setUser }) {
-  const [esRegistro, setEsRegistro] = useState(false);
-  const [email, setEmail] = useState("");
+function Login({ usuario, onLogin, onLogout, onNavigate }) {
+  const [creando, setCreando] = useState(false);
+  const [nombre, setNombre] = useState("");
+  const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmar, setConfirmar] = useState("");
   const [error, setError] = useState("");
 
-  const enviar = (e) => {
+  function enviar(e) {
     e.preventDefault();
-    setError("");
-
-    const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
-
-    if (esRegistro) {
-      if (usuarios[email]) return setError("Ese email ya está registrado");
-      if (password.length < 6)
-        return setError("La contraseña debe tener al menos 6 caracteres");
-      if (password !== confirmar)
-        return setError("Las contraseñas no coinciden");
-
-      usuarios[email] = password;
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    } else {
-      if (!usuarios[email])
-        return setError("No existe una cuenta con ese email");
-      if (usuarios[email] !== password)
-        return setError("Contraseña incorrecta");
+    if (!correo.trim() || !password.trim() || (creando && !nombre.trim())) {
+      setError("Completá todos los campos.");
+      return;
     }
-
-    localStorage.setItem("sesion", email);
-    setUser(email);
-    onNavigate("inicio");
-  };
-
-  const cambiarModo = () => {
-    setEsRegistro(!esRegistro);
+    // Simulado: sin backend. Si no hay nombre, usamos lo que va antes del @
+    const nombreFinal = creando ? nombre.trim() : correo.split("@")[0];
+    onLogin({ nombre: nombreFinal, correo: correo.trim() });
+    setNombre("");
+    setCorreo("");
+    setPassword("");
     setError("");
-  };
+  }
 
+  // ---- Con sesión: perfil ----
+  if (usuario) {
+    return (
+      <main className="usuario">
+        <section className="usuario-card">
+          <div className="usuario-avatar">{usuario.nombre[0].toUpperCase()}</div>
+          <h2>Hola, {usuario.nombre}</h2>
+          <p className="usuario-correo">{usuario.correo}</p>
+          <p className="usuario-texto">
+            Gracias por sumarte a EcoLoop. Cada compra ayuda a que más estudiantes tengan útiles.
+          </p>
+          <div className="usuario-botones">
+            <Boton onClick={() => onNavigate("tienda")}>Ir a la tienda</Boton>
+            <Boton variante="secundario" onClick={onLogout}>Cerrar sesión</Boton>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
+  // ---- Sin sesión: formulario ----
   return (
-    <main className="login">
-      <form className="login-form" onSubmit={enviar}>
-        <h2>{esRegistro ? "Crear cuenta" : "Iniciar sesión"}</h2>
+    <main className="usuario">
+      <form className="usuario-card" onSubmit={enviar}>
+        <img className="usuario-logo" src={logo} alt="EcoLoop" />
+        <h2>{creando ? "Crear cuenta" : "Iniciar sesión"}</h2>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        {esRegistro && (
-          <input
-            type="password"
-            placeholder="Repetir contraseña"
-            value={confirmar}
-            onChange={(e) => setConfirmar(e.target.value)}
-            required
-          />
+        {creando && (
+          <input placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
         )}
+        <input type="email" placeholder="Correo" value={correo} onChange={(e) => setCorreo(e.target.value)} />
+        <input type="password" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
 
-        {error && <p className="login-error">{error}</p>}
+        {error && <p className="usuario-error">{error}</p>}
 
-        <button type="submit" className="login-boton">
-          {esRegistro ? "Crear cuenta" : "Entrar"}
-        </button>
+        <Boton type="submit">{creando ? "Registrarme" : "Ingresar"}</Boton>
 
-        <button type="button" className="login-cambiar" onClick={cambiarModo}>
-          {esRegistro ? "Ya tengo cuenta" : "No tengo cuenta, crear una"}
-        </button>
+        <p className="usuario-cambio">
+          {creando ? "¿Ya tenés cuenta?" : "¿Todavía no tenés cuenta?"}{" "}
+          <button type="button" className="usuario-link" onClick={() => { setCreando(!creando); setError(""); }}>
+            {creando ? "Iniciá sesión" : "Creá una"}
+          </button>
+        </p>
       </form>
     </main>
   );

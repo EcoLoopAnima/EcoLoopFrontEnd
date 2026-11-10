@@ -1,62 +1,74 @@
-.login {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@600;700&display=swap");
+
+.usuario {
+  background: var(--crema);
+  min-height: 70vh;
   display: flex;
   justify-content: center;
-  padding: 60px 20px;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
-.login-form {
+.usuario-card {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  width: 100%;
-  max-width: 380px;
-  padding: 30px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.login-form h2 {
-  margin: 0 0 6px;
+  gap: 1rem;
   text-align: center;
 }
 
-.login-form input {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.login-form input:focus {
-  outline: none;
-  border-color: #2e7d32;
-}
-
-.login-boton {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #2e7d32;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.login-boton:hover {
-  background: #256628;
-}
-
-.login-cambiar {
-  border: none;
-  background: none;
-  color: #2e7d32;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.login-error {
+.usuario-card h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--verde);
+  font-size: 1.8rem;
   margin: 0;
-  color: #c62828;
-  font-size: 0.9rem;
 }
+
+.usuario-logo { height: 90px; object-fit: contain; align-self: center; }
+
+.usuario-card input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  background: var(--crema);
+}
+.usuario-card input:focus { outline: 2px solid var(--verde); background: #fff; }
+
+.usuario-error { color: #a33a2a; font-size: 0.9rem; margin: 0; }
+.usuario-cambio { font-size: 0.9rem; margin: 0; color: #555; }
+
+.usuario-link {
+  font-size: 0.9rem;
+  padding: 0;
+  color: var(--verde);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.usuario-link:hover { background: transparent; }
+
+/* perfil */
+.usuario-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+.usuario-correo { margin: 0; color: #555; }
+.usuario-texto { margin: 0; color: #333; line-height: 1.5; }
+.usuario-botones { display: flex; flex-direction: column; gap: 0.6rem; }

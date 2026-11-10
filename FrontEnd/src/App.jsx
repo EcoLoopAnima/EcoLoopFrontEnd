@@ -8,66 +8,126 @@ import Impacto from "./components/pages/Impacto";
 import PuntosVida from "./components/pages/PuntosVida";
 import Nosotros from "./components/pages/Nosotros";
 import Login from "./components/pages/Login";
-import CarritoPage from "./components/pages/Carrito";
-import Carrito from "./components/ui/Carrito";
-import CarruselPrincipal from "./components/sections/CarruselPrincipal";
+import CarritoPage from "./components/pages/CarritoPage";
 
 import CarruselPrincipal from "./components/sections/CarruselPrincipal";
-import CarruselCarrito from "./components/sections/CarruselCarrito";
 
 function App() {
   const [page, setPage] = useState("inicio");
   const [carrito, setCarrito] = useState([]);
-  const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  const [user, setUser] = useState(localStorage.getItem("sesion")); // NUEVO
+  const [usuario, setUsuario] = useState(null);
+  const [puntos, setPuntos] = useState(0); // saldo de puntos Vida
+  const [canjes, setCanjes] = useState([]); // artículos ya canjeados
 
+  function iniciarSesion(datos) {
+    setUsuario(datos);
+  }
+  function cerrarSesion() {
+    setUsuario(null);
+    setPage("inicio");
+  }
+
+  // El carrito es un array de productos con su cantidad: { ...producto, cantidad }
   function agregarAlCarrito(producto) {
-    setCarrito((carritoActual) => [...carritoActual, producto]);
+    const yaEsta = carrito.find((item) => item.id === producto.id);
+    if (yaEsta) {
+      // si ya estaba, le sumamos 1 a la cantidad
+      setCarrito(
+        carrito.map((item) =>
+          item.id === producto.id
+            ? { ...item, cantidad: item.cantidad + 1 }
+            : item,
+        ),
+      );
+    } else {
+      setCarrito([...carrito, { ...producto, cantidad: 1 }]);
+    }
   }
 
-  function abrirCarrito() {
-    setMostrarCarrito(true);
+  function cambiarCantidad(id, cambio) {
+    setCarrito(
+      carrito
+        .map((item) =>
+          item.id === id ? { ...item, cantidad: item.cantidad + cambio } : item,
+        )
+        .filter((item) => item.cantidad > 0), // si llega a 0, se saca
+    );
   }
 
-  function cerrarCarrito() {
-    setMostrarCarrito(false);
+  function quitarDelCarrito(id) {
+    setCarrito(carrito.filter((item) => item.id !== id));
   }
+
+  function vaciarCarrito() {
+    setCarrito([]);
+  }
+
+  // Comprar: 1 punto Vida por cada peso gastado
+  function comprar(total) {
+    setPuntos(puntos + total);
+    setCarrito([]);
+  }
+
+  // Canjear: se descuentan tantos puntos como cuesta el artículo
+  function canjear(producto) {
+    if (puntos < producto.precio) return;
+    setPuntos(puntos - producto.precio);
+    setCanjes([...canjes, producto]);
+  }
+
+  // cantidad total de unidades (para el numerito del header)
+  const cantidadCarrito = carrito.reduce(
+    (total, item) => total + item.cantidad,
+    0,
+  );
 
   return (
     <>
       <Header
         onNavigate={setPage}
-        cantidadCarrito={carrito.length}
-        abrirCarrito={abrirCarrito}
-        user={user} // NUEVO
-        setUser={setUser} // NUEVO
+        usuario={usuario}
+        onLogout={cerrarSesion}
+        cantidadCarrito={cantidadCarrito}
       />
+
       {page === "inicio" && (
         <>
           <Inicio />
-          <CarruselPrincipal agregarAlCarrito={agregarAlCarrito} />
+          <CarruselPrincipal />
         </>
       )}
-      {page === "tienda" && (
-        <>
-          <Tienda agregarAlCarrito={agregarAlCarrito} />
 
-          <div>
-            <h2>Conocé nuestra Tienda</h2>
-            <CarruselCarrito agregarAlCarrito={agregarAlCarrito} />
-          </div>
-        </>
-      )}
+      {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
       {page === "impacto" && <Impacto />}
-      {page === "puntos" && <PuntosVida />}
+      {page === "puntos" && (
+        <PuntosVida
+          usuario={usuario}
+          puntos={puntos}
+          canjes={canjes}
+          canjear={canjear}
+          onNavigate={setPage}
+        />
+      )}
       {page === "nosotros" && <Nosotros />}
       {page === "login" && (
-        <Login onNavigate={setPage} setUser={setUser} />
-      )}{" "}
-      {/* NUEVO: props */}
-      {page === "carrito" && <CarritoPage carrito={carrito} />}
-      {mostrarCarrito && (
-        <Carrito carrito={carrito} cerrarCarrito={cerrarCarrito} />
+        <Login
+          usuario={usuario}
+          onLogin={iniciarSesion}
+          onLogout={cerrarSesion}
+          onNavigate={setPage}
+        />
+      )}
+
+      {page === "carrito" && (
+        <CarritoPage
+          carrito={carrito}
+          usuario={usuario}
+          cambiarCantidad={cambiarCantidad}
+          quitarDelCarrito={quitarDelCarrito}
+          vaciarCarrito={vaciarCarrito}
+          comprar={comprar}
+          onNavigate={setPage}
+        />
       )}
     </>
   );

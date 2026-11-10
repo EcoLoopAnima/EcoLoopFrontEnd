@@ -1,11 +1,9 @@
-
-.banner-inicio {
+.bannerinicio {
     width: 100%;
-    height: 220px;
     overflow: hidden;
 }
 
-.banner-inicio img {
+.bannerinicio img {
     width: 100%;
     height: 100%;
     object-fit: cover;
