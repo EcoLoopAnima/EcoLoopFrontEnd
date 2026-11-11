@@ -1,16 +1,21 @@
 import "./tienda.css";
-import productos from "../data/productos";
-import { kitsEstudio, kitEmpresarial } from "../data/tienda";
 import HeroTienda from "../sections/HeroTienda";
 import BarraBeneficios from "../sections/BarraBeneficios";
 import KitCard from "../ui/KitCard";
 import ProductoMini from "../ui/ProductoMini";
 import Footer from "../layout/Footer";
 
-// Los productos sueltos son los que ya tenías en productos.js (sin los dos kits)
-const individuales = productos.slice(2);
+function Tienda({ productos, cargando, errorApi, agregarAlCarrito }) {
+  if (cargando) return <p className="tienda-aviso">Cargando productos...</p>;
+  if (errorApi) {
+    return <p className="tienda-aviso">No pudimos cargar los productos. ¿Está prendido el backend?</p>;
+  }
 
-function Tienda({ agregarAlCarrito }) {
+  // Separamos los productos que llegaron del backend por categoría
+  const kitsEstudio = productos.filter((p) => p.categoria === "kit-estudio");
+  const kitEmpresarial = productos.find((p) => p.categoria === "kit-empresarial");
+  const individuales = productos.filter((p) => p.categoria === "individual");
+
   return (
     <div className="tienda">
       <HeroTienda />
@@ -28,7 +33,9 @@ function Tienda({ agregarAlCarrito }) {
       <div className="tienda-doble">
         <section>
           <h2 className="titulo-seccion">Kits empresariales</h2>
-          <KitCard kit={kitEmpresarial} agregarAlCarrito={agregarAlCarrito} horizontal />
+          {kitEmpresarial && (
+            <KitCard kit={kitEmpresarial} agregarAlCarrito={agregarAlCarrito} horizontal />
+          )}
         </section>
 
         <section>
@@ -39,12 +46,10 @@ function Tienda({ agregarAlCarrito }) {
             ))}
           </div>
         </section>
-
       </div>
+
       <Footer />
     </div>
-
-    
   );
 }
 

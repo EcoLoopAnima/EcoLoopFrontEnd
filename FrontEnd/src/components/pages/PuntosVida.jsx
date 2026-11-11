@@ -8,7 +8,7 @@ const pasos = [
   { id: 3, icono: "🎁", titulo: "Canjeás", texto: "Usás tus puntos para llevarte artículos de la tienda." },
 ];
 
-function PuntosVida({ usuario, puntos, canjes, canjear, onNavigate }) {
+function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate }) {
   return (
     <main className="pv">
       <h2 className="pv-titulo">Puntos Vida</h2>
