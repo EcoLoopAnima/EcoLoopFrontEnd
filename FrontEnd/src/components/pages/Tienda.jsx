@@ -1,6 +1,4 @@
 import "./tienda.css";
-import productos from "../data/productos";
-import { kitsEstudio } from "../data/tienda";
 import HeroTienda from "../sections/HeroTienda";
 import BarraBeneficios from "../sections/BarraBeneficios";
 import KitCard from "../ui/KitCard";
@@ -15,11 +13,8 @@ function Tienda({ productos, cargando, errorApi, agregarAlCarrito }) {
 
   // Separamos los productos que llegaron del backend por categoría
   const kitsEstudio = productos.filter((p) => p.categoria === "kit-estudio");
-  const kitEmpresarial = productos.find((p) => p.categoria === "kit-empresarial");
   const individuales = productos.filter((p) => p.categoria === "individual");
 
-
-function Tienda({ agregarAlCarrito }) {
   return (
     <div className="tienda">
       <HeroTienda />
