@@ -457,3 +457,9 @@
 .mini-carrito:hover {
     background-color: #65765b;
 }
+.tienda-aviso {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--verde);
+  font-family: 'Montserrat', sans-serif;
+}

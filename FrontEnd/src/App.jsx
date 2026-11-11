@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import Header from "./components/layout/Header";
@@ -10,7 +10,6 @@ import Nosotros from "./components/pages/Nosotros";
 import Login from "./components/pages/Login";
 import CarritoPage from "./components/pages/CarritoPage";
 
-import CarruselPrincipal from "./components/sections/CarruselPrincipal";
 
 function App() {
   const [page, setPage] = useState("inicio");
@@ -18,6 +17,23 @@ function App() {
   const [usuario, setUsuario] = useState(null);
   const [puntos, setPuntos] = useState(0); // saldo de puntos Vida
   const [canjes, setCanjes] = useState([]); // artículos ya canjeados
+
+  // Productos que vienen del backend
+  const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
+  const [errorApi, setErrorApi] = useState(false);
+
+  // Se ejecuta una sola vez, cuando la página carga
+  useEffect(() => {
+    fetch("http://localhost:3000/productos")
+      .then((res) => {
+        if (!res.ok) throw new Error("Error " + res.status);
+        return res.json();
+      })
+      .then((datos) => setProductos(datos))
+      .catch(() => setErrorApi(true))
+      .finally(() => setCargando(false));
+  }, []);
 
   function iniciarSesion(datos) {
     setUsuario(datos);
@@ -90,18 +106,21 @@ function App() {
         cantidadCarrito={cantidadCarrito}
       />
 
-      {page === "inicio" && (
-        <>
-          <Inicio />
-          
-        </>
-      )}
+      {page === "inicio" && <Inicio />}
 
-      {page === "tienda" && <Tienda agregarAlCarrito={agregarAlCarrito} />}
+      {page === "tienda" && (
+        <Tienda
+          productos={productos}
+          cargando={cargando}
+          errorApi={errorApi}
+          agregarAlCarrito={agregarAlCarrito}
+        />
+      )}
       {page === "impacto" && <Impacto />}
       {page === "puntos" && (
         <PuntosVida
           usuario={usuario}
+          productos={productos}
           puntos={puntos}
           canjes={canjes}
           canjear={canjear}

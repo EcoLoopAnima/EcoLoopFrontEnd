@@ -7,8 +7,16 @@ import KitCard from "../ui/KitCard";
 import ProductoMini from "../ui/ProductoMini";
 import Footer from "../layout/Footer";
 
-// Los productos sueltos son los que ya tenías en productos.js (sin los dos kits)
-const individuales = productos.slice(2);
+function Tienda({ productos, cargando, errorApi, agregarAlCarrito }) {
+  if (cargando) return <p className="tienda-aviso">Cargando productos...</p>;
+  if (errorApi) {
+    return <p className="tienda-aviso">No pudimos cargar los productos. ¿Está prendido el backend?</p>;
+  }
+
+  // Separamos los productos que llegaron del backend por categoría
+  const kitsEstudio = productos.filter((p) => p.categoria === "kit-estudio");
+  const kitEmpresarial = productos.find((p) => p.categoria === "kit-empresarial");
+  const individuales = productos.filter((p) => p.categoria === "individual");
 
 
 function Tienda({ agregarAlCarrito }) {
