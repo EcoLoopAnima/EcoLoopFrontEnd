@@ -1,10 +1,9 @@
-
 .beneficios-inicio {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    padding: 12px 20px;
+    gap: 20px;
+    padding: 25px 5%;
     box-sizing: border-box;
     background-color: #f5f3e8;
 }
@@ -15,46 +14,48 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    padding: 12px 10px;
+    gap: 18px;
+    padding: 20px 15px;
     border-radius: 12px;
-    min-height: 65px;
+    min-height: 95px;
     box-sizing: border-box;
 }
 
 .beneficio-icono {
-    font-size: 30px;
+    font-size: 36px;
     color: #426746;
-    width: 38px;
+    width: 42px;
     text-align: center;
     flex-shrink: 0;
 }
 
 .beneficio-card p {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     margin: 0;
     text-align: left;
+    line-height: 1.4;
 }
 
-/* Adaptación para celulares */
 @media (max-width: 650px) {
     .beneficios-inicio {
         grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        padding: 10px;
+        gap: 10px;
+        padding: 15px 10px;
     }
 
     .beneficio-card {
         gap: 8px;
-        padding: 10px 5px;
+        padding: 12px 8px;
+        min-height: 80px;
     }
 
     .beneficio-icono {
-        font-size: 23px;
+        font-size: 25px;
+        width: 30px;
     }
 
     .beneficio-card p {
-        font-size: 12px;
+        font-size: 13px;
     }
 }

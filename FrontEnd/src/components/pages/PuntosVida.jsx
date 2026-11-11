@@ -3,7 +3,7 @@ import productos from "../data/productos";
 import Boton from "../ui/Botones";
 
 const pasos = [
-  { id: 1, icono: "🛒", titulo: "Comprás", texto: "Cada peso que gastás en la tienda te da 1 punto Vida." },
+  { id: 1, icono: "🛒", titulo: "Comprás", texto: "Cada peso que gastás en la tienda te da 1 punto Loop." },
   { id: 2, icono: "⭐", titulo: "Acumulás", texto: "Tus puntos se suman a tu saldo automáticamente." },
   { id: 3, icono: "🎁", titulo: "Canjeás", texto: "Usás tus puntos para llevarte artículos de la tienda." },
 ];
@@ -11,7 +11,7 @@ const pasos = [
 function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate }) {
   return (
     <main className="pv">
-      <h2 className="pv-titulo">Puntos Vida</h2>
+      <h2 className="pv-titulo">Puntos Loop</h2>
       <p className="pv-sub">Comprá, acumulá y canjeá. Cada compra te da puntos para tu próximo útil.</p>
 
       <ol className="pv-pasos">
@@ -71,7 +71,10 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate })
           )}
         </>
       )}
+
+  
     </main>
+    
   );
 }
 

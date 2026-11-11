@@ -41,6 +41,7 @@
     display: block;
     object-fit: contain;
     border-radius: 18px;
+    border: 1px solid #344735;
 }
 
 .nosotros-texto {
@@ -118,6 +119,7 @@
     height: 340px;
     object-fit: cover;
     border-radius: 18px;
+    border: 1px solid #344735;
 }
 
 
@@ -153,6 +155,7 @@
     min-height: 210px;
     padding: 28px 22px;
     border-radius: 22px;
+    border: 1px solid #344735;
 
     display: flex;
     flex-direction: column;
@@ -243,6 +246,7 @@
     padding: 45px 38px;
     min-height: 350px;
     border-radius: 12px;
+    border: 1px solid #344735;
 
     display: flex;
     flex-direction: column;

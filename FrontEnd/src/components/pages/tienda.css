@@ -1,19 +1,22 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap");
 
 .tienda {
   font-family: "Montserrat", sans-serif;
   color: #2b3a33;
-   padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .titulo-seccion {
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
-  font-size: 1.7rem;
-  color: var(--verde);
-  margin: 0 0 1rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: var(--verde);
+    margin: 0 0 2rem;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #d9dfcf;
+    letter-spacing: 0.5px;
 }
-
 /* ---------- Banner principal ---------- */
 
 .hero-tienda {
@@ -117,10 +120,11 @@
 /* ---------- Secciones ---------- */
 
 .tienda-seccion {
-  padding: 1rem 3% 1.5rem;
+    padding: 2rem 4% 2.5rem;
+    margin-bottom: 15px;
 }
 
-/* ---------- Kits: todos en una fila ---------- */
+/* ---------- Kits ---------- */
 
 .grid-kits {
   display: grid;
@@ -230,34 +234,42 @@
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   gap: 2rem;
-  padding: 1rem 3% 0;
+  padding: 1rem 3% 1.5rem;
+  align-items: start;
 }
 
 .kit-horizontal {
   display: grid;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 185px minmax(0, 1fr);
   background: #eef2e8;
+  height: auto;
+  align-self: start;
 }
 
 .kit-horizontal .kit-foto {
-  height: 200px;
+  height: 160px;
 }
 
 .kit-horizontal .kit-info {
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 0.9rem;
 }
 
 .kit-horizontal .kit-pie {
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 0;
 }
 
 /* ---------- Productos individuales ---------- */
 
 .grid-mini {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.9rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    padding: 15px 25px;
+    margin-bottom: 40px;
 }
 
 .mini-card {
@@ -266,6 +278,12 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(35, 80, 59, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mini-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(35, 80, 59, 0.12);
 }
 
 .mini-card img {
@@ -312,7 +330,8 @@
   background: #1a3d2d;
 }
 
-/* ---------- Pantallas chicas ---------- */
+/* ---------- Pantallas medianas ---------- */
+
 @media (max-width: 900px) {
   .hero-tienda {
     grid-template-columns: 1fr;
@@ -329,13 +348,115 @@
 
   .tienda-doble {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .kit-horizontal {
-    grid-template-columns: 1fr;
+    grid-template-columns: 185px 1fr;
   }
 }
 
+/* ---------- Celulares ---------- */
+
+@media (max-width: 600px) {
+  .kit-horizontal {
+    grid-template-columns: 1fr;
+  }
+
+  .kit-horizontal .kit-foto {
+    height: 220px;
+  }
+
+  .kit-horizontal .kit-info {
+    padding: 1rem;
+  }
+
+  .grid-kits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-mini {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+ .titulo-seccion {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+}
+
+
+/* GRILLA DE PRODUCTOS INDIVIDUALES */
+
+.grid-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    padding: 20px 35px;
+    margin-bottom: 45px;
+}
+
+/* CARD INDIVIDUAL */
+
+.mini-card {
+    background-color: #f5f3e8;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+    transition: transform 0.3s ease;
+}
+
+.mini-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGEN */
+
+.mini-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* PIE DE CARD */
+
+.mini-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8px 8px;
+    gap: 10px;
+}
+
+.mini-pie h4 {
+    color: #354d36;
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+.mini-pie strong {
+    color: #394535;
+    font-size: 16px;
+}
+
+/* BOTÓN CARRITO */
+
+.mini-carrito {
+    background-color: #394535;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mini-carrito:hover {
+    background-color: #65765b;
+}
 .tienda-aviso {
   text-align: center;
   padding: 4rem 1rem;
