@@ -1,28 +1,105 @@
 
-.nosotros-cierre {
+.footer-ecoloop {
     width: 100%;
-    padding: 25px 20px;
+    padding: 30px 7%;
     margin-top: 30px;
     background-color: #394535;
     color: #f5f0e6;
-    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+    align-items: center;
+    gap: 35px;
+
     box-sizing: border-box;
 }
 
+/* COLUMNAS */
+
+.footer-columna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.footer-columna h3 {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: 1px;
+    color: #f5f0e6;
+}
+
+.footer-columna p,
+.footer-columna a {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #e9eddf;
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* ICONOS */
+
+.footer-columna i {
+    font-size: 16px;
+    color: #c5d0b7;
+}
+
+/* EFECTO HOVER DE LOS ENLACES */
+
+.footer-columna a {
+    transition: color 0.3s ease;
+}
+
+.footer-columna a:hover {
+    color: #c5d0b7;
+}
+
+/* IDENTIDAD ECOLOOP */
+
+.footer-identidad {
+    align-items: center;
+    text-align: center;
+}
+
 .cierre-frase {
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 18px !important;
     font-weight: 500;
 }
 
 .cierre-slogan {
-    font-size: 13px;
+    font-size: 12px !important;
     letter-spacing: 2px;
-    margin-bottom: 8px;
 }
 
 .cierre-marca {
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 3px;
     opacity: 0.7;
+}
+
+/* ADAPTACIÓN PARA CELULARES */
+
+@media (max-width: 650px) {
+
+    .footer-ecoloop {
+        grid-template-columns: 1fr 1fr;
+        padding: 25px 7%;
+        gap: 25px;
+    }
+
+    .footer-identidad {
+        grid-column: 1 / -1;
+        padding-top: 10px;
+    }
+
+    .cierre-frase {
+        font-size: 16px !important;
+    }
 }

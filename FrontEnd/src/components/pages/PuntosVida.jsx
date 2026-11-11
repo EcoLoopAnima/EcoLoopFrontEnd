@@ -11,7 +11,7 @@ const pasos = [
 function PuntosVida({ usuario, puntos, canjes, canjear, onNavigate }) {
   return (
     <main className="pv">
-      <h2 className="pv-titulo">Puntos Vida</h2>
+      <h2 className="pv-titulo">Puntos Loop</h2>
       <p className="pv-sub">Comprá, acumulá y canjeá. Cada compra te da puntos para tu próximo útil.</p>
 
       <ol className="pv-pasos">
@@ -71,7 +71,10 @@ function PuntosVida({ usuario, puntos, canjes, canjear, onNavigate }) {
           )}
         </>
       )}
+
+  
     </main>
+    
   );
 }
 
