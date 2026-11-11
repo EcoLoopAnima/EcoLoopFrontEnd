@@ -3,7 +3,7 @@ import productos from "../data/productos";
 import Boton from "../ui/Botones";
 
 const pasos = [
-  { id: 1, icono: "🛒", titulo: "Comprás", texto: "Cada peso que gastás en la tienda te da 1 punto Vida." },
+  { id: 1, icono: "🛒", titulo: "Comprás", texto: "Cada peso que gastás en la tienda te da 1 punto Loop." },
   { id: 2, icono: "⭐", titulo: "Acumulás", texto: "Tus puntos se suman a tu saldo automáticamente." },
   { id: 3, icono: "🎁", titulo: "Canjeás", texto: "Usás tus puntos para llevarte artículos de la tienda." },
 ];
