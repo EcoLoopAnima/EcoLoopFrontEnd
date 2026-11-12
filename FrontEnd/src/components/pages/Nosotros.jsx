@@ -1,5 +1,5 @@
 import "./Nosotros.css";
-import banner from "../../assets/moña.jpg";
+import banner from "../../assets/mona.jpg";
 import "../layout/Footer.css";
 
 function Nosotros() {
