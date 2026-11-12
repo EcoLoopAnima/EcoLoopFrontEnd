@@ -1,5 +1,3 @@
-import "./nav.css";
-
 function Nav({ onNavigate }) {
     return (
         <nav className="nav">

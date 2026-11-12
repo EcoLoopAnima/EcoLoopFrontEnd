@@ -1,5 +1,3 @@
-import { heroIconos } from "../data/tienda";
-
 function HeroTienda() {
   return (
     <section className="hero-tienda">

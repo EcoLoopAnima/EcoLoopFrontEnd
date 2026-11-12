@@ -1,5 +1,4 @@
 import "./puntosVida.css";
-import productos from "../data/productos";
 import Boton from "../ui/Botones";
 
 const pasos = [
