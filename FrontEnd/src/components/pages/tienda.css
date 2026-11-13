@@ -17,7 +17,7 @@
     border-bottom: 2px solid #d9dfcf;
     letter-spacing: 0.5px;
 }
-/* ---------- Banner principal ---------- */
+/* Banner principal */
 
 .hero-tienda {
   display: grid;
@@ -91,7 +91,6 @@
   mask-image: linear-gradient(to right, transparent, #000 30%);
 }
 
-/* ---------- Franja de beneficios ---------- */
 
 .beneficios-barra {
   display: flex;
@@ -117,14 +116,13 @@
   font-size: 1.6rem;
 }
 
-/* ---------- Secciones ---------- */
 
 .tienda-seccion {
     padding: 2rem 4% 2.5rem;
     margin-bottom: 15px;
 }
 
-/* ---------- Kits ---------- */
+/* Kits */
 
 .grid-kits {
   display: grid;
@@ -133,7 +131,7 @@
   align-items: stretch;
 }
 
-/* ---------- Tarjetas de kits ---------- */
+/*Tarjetas de kits*/
 
 .kit-card {
   display: flex;
@@ -228,7 +226,7 @@
   margin-top: auto;
 }
 
-/* ---------- Kit empresarial horizontal ---------- */
+/*Kit empresarial horizontal*/
 
 .tienda-doble {
   display: grid;
@@ -262,7 +260,7 @@
   padding-top: 0;
 }
 
-/* ---------- Productos individuales ---------- */
+/*Productos individuales*/
 
 .grid-mini {
     display: grid;
@@ -330,7 +328,7 @@
   background: #1a3d2d;
 }
 
-/* ---------- Pantallas medianas ---------- */
+/*Pantallas medianas*/
 
 @media (max-width: 900px) {
   .hero-tienda {
@@ -356,7 +354,7 @@
   }
 }
 
-/* ---------- Celulares ---------- */
+/* Celulares */
 
 @media (max-width: 600px) {
   .kit-horizontal {
@@ -386,7 +384,7 @@
 }
 
 
-/* GRILLA DE PRODUCTOS INDIVIDUALES */
+
 
 .grid-mini {
     display: grid;
@@ -396,7 +394,7 @@
     margin-bottom: 45px;
 }
 
-/* CARD INDIVIDUAL */
+
 
 .mini-card {
     background-color: #f5f3e8;
@@ -412,7 +410,7 @@
     transform: translateY(-5px);
 }
 
-/* IMAGEN */
+
 
 .mini-card img {
     width: 100%;
@@ -421,7 +419,7 @@
     border-radius: 10px;
 }
 
-/* PIE DE CARD */
+
 
 .mini-pie {
     display: flex;
@@ -442,7 +440,7 @@
     font-size: 16px;
 }
 
-/* BOTÓN CARRITO */
+
 
 .mini-carrito {
     background-color: #394535;

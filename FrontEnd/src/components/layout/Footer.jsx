@@ -5,7 +5,6 @@ function Footer() {
     return (
         <footer className="footer-ecoloop">
 
-            {/* COLUMNA AYUDA */}
             <div className="footer-columna">
                 <h3>AYUDA</h3>
 
@@ -20,7 +19,6 @@ function Footer() {
                 </a>
             </div>
 
-            {/* COLUMNA REDES SOCIALES */}
             <div className="footer-columna">
                 <h3>SEGUINOS</h3>
 
@@ -43,7 +41,6 @@ function Footer() {
                 </a>
             </div>
 
-            {/* COLUMNA FRASE ECOLOOP */}
             <div className="footer-columna footer-identidad">
 
                 <p className="cierre-frase">

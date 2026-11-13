@@ -5,7 +5,6 @@ import "../layout/Footer.css";
 function Nosotros() {
   return (
     <main className="nosotros">
-      {/* PRESENTACIÓN INSTITUCIONAL */}
 
       <section className="nosotros-presentacion">
         <div className="nosotros-banner">
@@ -28,7 +27,6 @@ function Nosotros() {
         </div>
       </section>
 
-      {/* NUESTRA MOTIVACIÓN */}
 
       <section className="nosotros-motivacion">
         <div className="motivacion-contenido">
@@ -60,8 +58,6 @@ function Nosotros() {
           </div>
         </div>
       </section>
-
-      {/* NUESTROS PROPÓSITOS */}
 
       <section className="propositos">
         <div className="propositos-encabezado">
@@ -110,7 +106,6 @@ function Nosotros() {
         </div>
       </section>
 
-      {/* NUESTRA PROPUESTA */}
 
       <section className="nosotros-propuesta">
         <div className="propuesta-encabezado">
@@ -119,7 +114,7 @@ function Nosotros() {
         </div>
 
         <div className="propuesta-tarjetas">
-          {/* CARD CANJE */}
+
 
           <article className="propuesta-card propuesta-canje">
             <span className="propuesta-numero">01</span>
@@ -142,7 +137,6 @@ function Nosotros() {
             </span>
           </article>
 
-          {/* CARD TIENDA */}
 
           <article className="propuesta-card propuesta-tienda">
             <span className="propuesta-numero">02</span>
@@ -168,10 +162,8 @@ function Nosotros() {
         </div>
       </section>
 
-      {/* Cierre */}
       <footer className="footer-ecoloop">
 
-    {/* COLUMNA AYUDA */}
     <div className="footer-columna">
         <h3>AYUDA</h3>
 
@@ -186,7 +178,6 @@ function Nosotros() {
         </a>
     </div>
 
-    {/* COLUMNA REDES */}
     <div className="footer-columna">
         <h3>SEGUINOS</h3>
 
@@ -205,7 +196,6 @@ function Nosotros() {
         </a>
     </div>
 
-    {/* COLUMNA FRASE */}
     <div className="footer-columna footer-identidad">
 
         <p className="cierre-frase">

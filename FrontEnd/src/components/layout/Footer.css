@@ -14,8 +14,6 @@
     box-sizing: border-box;
 }
 
-/* COLUMNAS */
-
 .footer-columna {
     display: flex;
     flex-direction: column;
@@ -44,14 +42,10 @@
     gap: 9px;
 }
 
-/* ICONOS */
-
 .footer-columna i {
     font-size: 16px;
     color: #c5d0b7;
 }
-
-/* EFECTO HOVER DE LOS ENLACES */
 
 .footer-columna a {
     transition: color 0.3s ease;
@@ -60,8 +54,6 @@
 .footer-columna a:hover {
     color: #c5d0b7;
 }
-
-/* IDENTIDAD ECOLOOP */
 
 .footer-identidad {
     align-items: center;

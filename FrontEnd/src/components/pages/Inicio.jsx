@@ -17,8 +17,6 @@ function Inicio() {
 
       <CarruselPrincipal />
 
-      {/* Aquí agregaremos futuras secciones de Inicio */}
-
       <Footer />
 
     </main>

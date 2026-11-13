@@ -15,7 +15,6 @@
   border-bottom: 1px solid var(--borde);
 }
 
-/* LOGO */
 .header-logo {
   width: clamp(220px, 25vw, 420px);
   height: auto;
@@ -24,7 +23,6 @@
   flex-shrink: 1;
 }
 
-/* ENLACES */
 .header-links {
   display: flex;
   align-items: center;
@@ -40,7 +38,6 @@
   font-size: clamp(0.9rem, 1.3vw, 1.5rem);
 }
 
-/* ACCIONES */
 .header-acciones {
   display: flex;
   align-items: center;
@@ -71,7 +68,6 @@ button img {
   object-fit: contain;
 }
 
-/* ICONOS Y CARRITO */
 .header-extra {
   display: flex;
   align-items: center;
@@ -83,7 +79,6 @@ button img {
   position: relative;
 }
 
-/* BUSCADOR */
 .lupa {
   display: flex;
   align-items: center;
@@ -123,7 +118,6 @@ button img {
   opacity: 1;
 }
 
-/* CUANDO SE ABRE EL BUSCADOR */
 .header-buscando .header-links,
 .header-buscando .header-extra {
   max-width: 0;
@@ -136,7 +130,6 @@ button img {
   justify-content: flex-end;
 }
 
-/* CONTADOR CARRITO */
 .header-contador {
   position: absolute;
   top: 0;
@@ -155,7 +148,6 @@ button img {
   justify-content: center;
 }
 
-/* BARRA DE SESIÓN */
 .barra-sesion {
   display: flex;
   justify-content: flex-end;

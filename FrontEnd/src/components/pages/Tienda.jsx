@@ -11,7 +11,6 @@ function Tienda({ productos, cargando, errorApi, agregarAlCarrito }) {
     return <p className="tienda-aviso">No pudimos cargar los productos. ¿Está prendido el backend?</p>;
   }
 
-  // Separamos los productos que llegaron del backend por categoría
   const kitsEstudio = productos.filter((p) => p.categoria === "kit-estudio");
   const individuales = productos.filter((p) => p.categoria === "individual");
 
@@ -20,7 +19,7 @@ function Tienda({ productos, cargando, errorApi, agregarAlCarrito }) {
       <HeroTienda />
       <BarraBeneficios />
 
-      {/* KITS DE ESTUDIO */}
+
       <section className="tienda-seccion">
         <h2 className="titulo-seccion">Kits de estudio</h2>
 
@@ -35,7 +34,7 @@ function Tienda({ productos, cargando, errorApi, agregarAlCarrito }) {
         </div>
       </section>
 
-      {/* PRODUCTOS INDIVIDUALES */}
+
       <section className="tienda-seccion">
         <h2 className="titulo-seccion">Productos individuales</h2>
 

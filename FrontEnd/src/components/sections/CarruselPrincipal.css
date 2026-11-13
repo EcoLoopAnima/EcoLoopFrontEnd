@@ -51,7 +51,7 @@
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-/* EFECTO HOVER */
+
 .foto img:hover {
     transform: scale(1.08);
     filter: brightness(1.05);

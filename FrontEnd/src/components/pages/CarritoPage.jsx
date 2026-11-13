@@ -21,10 +21,10 @@ function CarritoPage({
 
   function finalizar() {
     if (!usuario) {
-      onNavigate("login"); // para comprar hay que iniciar sesión
+      onNavigate("login"); 
       return;
     }
-    comprar(total); // suma los puntos Vida y vacía el carrito
+    comprar(total); 
     setGanados(total);
     setComprado(true);
   }

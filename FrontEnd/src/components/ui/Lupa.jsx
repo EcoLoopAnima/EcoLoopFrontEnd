@@ -5,12 +5,11 @@ function Lupa({ abierto, setAbierto, onBuscar }) {
     const [texto, setTexto] = useState("");
     const inputRef = useRef(null);
 
-    // poner el cursor en el input al abrir
     useEffect(() => {
         if (abierto) inputRef.current?.focus();
     }, [abierto]);
 
-    // cerrar con Escape
+
     useEffect(() => {
         const onKey = (e) => e.key === "Escape" && setAbierto(false);
         window.addEventListener("keydown", onKey);

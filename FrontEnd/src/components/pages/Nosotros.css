@@ -1,8 +1,4 @@
 
-/* =================================
-   CONTENEDOR GENERAL
-================================= */
-
 .nosotros {
     width: 100%;
     background-color: #f5f0e6;
@@ -11,9 +7,6 @@
 }
 
 
-/* =================================
-   PRESENTACIÓN: FOTO + TEXTO
-================================= */
 
 .nosotros-presentacion {
     width: 100%;
@@ -66,9 +59,7 @@
 }
 
 
-/* =================================
-   NUESTRA MOTIVACIÓN
-================================= */
+
 
 .nosotros-motivacion {
     width: 100%;
@@ -123,9 +114,7 @@
 }
 
 
-/* =================================
-   NUESTROS PROPÓSITOS
-================================= */
+
 
 .propositos {
     padding: 65px 6%;
@@ -205,9 +194,7 @@
 }
 
 
-/* =================================
-   NUESTRA PROPUESTA
-================================= */
+
 
 .nosotros-propuesta {
     padding: 75px 10%;
@@ -231,15 +218,12 @@
     line-height: 1.7;
 }
 
-/* CONTENEDOR */
 
 .propuesta-tarjetas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
-
-/* CARDS */
 
 .propuesta-card {
     position: relative;
@@ -262,21 +246,16 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.10);
 }
 
-/* CARD CANJE */
 
 .propuesta-canje {
     background-color: #e5e3d5;
     color: #333b2e;
 }
 
-/* CARD TIENDA */
-
 .propuesta-tienda {
     background-color: #394535;
     color: #ffffff;
 }
-
-/* NUMERACIÓN */
 
 .propuesta-numero {
     position: absolute;
@@ -287,7 +266,6 @@
     opacity: 0.7;
 }
 
-/* ICONOS DE NUESTROS PROPÓSITOS */
 .proposito-icono {
     font-size: 42px;
     color: #ffffff;
@@ -302,14 +280,14 @@
     color: #ffffff;
 }
 
-/* TÍTULOS */
+
 
 .propuesta-card h3 {
     font-size: 27px;
     margin-bottom: 15px;
 }
 
-/* FRASES */
+
 
 .propuesta-card h4 {
     font-size: 19px;
@@ -326,7 +304,7 @@
     color: #e5e3d5;
 }
 
-/* DESCRIPCIONES */
+
 
 .propuesta-card p {
     font-size: 15px;
@@ -334,7 +312,7 @@
     margin-bottom: 25px;
 }
 
-/* DETALLE FINAL */
+
 
 .propuesta-detalle {
     font-size: 11px;
@@ -344,7 +322,7 @@
     opacity: 0.75;
 }
 
-/* FOOTER */
+
 .nosotros-cierre {
     width: 100%;
     padding: 25px 20px;
@@ -371,7 +349,7 @@
     opacity: 0.7;
 }
 
-/* DISEÑO RESPONSIVE */
+
 @media (max-width: 900px) {
     .propositos-contenedor {
         grid-template-columns: repeat(2, 1fr);

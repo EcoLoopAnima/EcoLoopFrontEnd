@@ -16,7 +16,7 @@ function Login({ usuario, onLogin, onLogout, onNavigate }) {
       setError("Completá todos los campos.");
       return;
     }
-    // Simulado: sin backend. Si no hay nombre, usamos lo que va antes del @
+   
     const nombreFinal = creando ? nombre.trim() : correo.split("@")[0];
     onLogin({ nombre: nombreFinal, correo: correo.trim() });
     setNombre("");
@@ -25,7 +25,6 @@ function Login({ usuario, onLogin, onLogout, onNavigate }) {
     setError("");
   }
 
-  // ---- Con sesión: perfil ----
   if (usuario) {
     return (
       <main className="usuario">
@@ -45,7 +44,6 @@ function Login({ usuario, onLogin, onLogout, onNavigate }) {
     );
   }
 
-  // ---- Sin sesión: formulario ----
   return (
     <main className="usuario">
       <form className="usuario-card" onSubmit={enviar}>
