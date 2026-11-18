@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./carritoPage.css";
 import Botones from "../ui/Botones";
 
@@ -9,8 +10,8 @@ function CarritoPage({
   quitarDelCarrito,
   vaciarCarrito,
   comprar,
-  onNavigate,
 }) {
+  const navigate = useNavigate();
   const [comprado, setComprado] = useState(false);
   const [ganados, setGanados] = useState(0);
 
@@ -21,10 +22,10 @@ function CarritoPage({
 
   function finalizar() {
     if (!usuario) {
-      onNavigate("login"); 
+      navigate("/login");
       return;
     }
-    comprar(total); 
+    comprar(total);
     setGanados(total);
     setComprado(true);
   }
@@ -38,10 +39,10 @@ function CarritoPage({
             Ganaste <strong>{ganados} puntos Vida</strong>
           </p>
           <p>Con cada compra ayudás a que más estudiantes tengan útiles.</p>
-          <Botones onClick={() => onNavigate("puntos")}>
+          <Botones onClick={() => navigate("/puntos")}>
             Canjear mis puntos
           </Botones>
-          <Botones variante="secundario" onClick={() => onNavigate("tienda")}>
+          <Botones variante="secundario" onClick={() => navigate("/tienda")}>
             Seguir comprando
           </Botones>
         </section>
@@ -55,7 +56,7 @@ function CarritoPage({
         <section className="cart-vacio">
           <h2>Tu carrito está vacío</h2>
           <p>Todavía no agregaste nada. Mirá lo que tenemos en la tienda.</p>
-          <Botones onClick={() => onNavigate("tienda")}>Ir a la tienda</Botones>
+          <Botones onClick={() => navigate("/tienda")}>Ir a la tienda</Botones>
         </section>
       </main>
     );
@@ -123,7 +124,7 @@ function CarritoPage({
             </small>
           ) : (
             <small>Tenés que iniciar sesión para finalizar la compra.</small>
-          )}{" "}
+          )}
         </aside>
       </div>
     </main>

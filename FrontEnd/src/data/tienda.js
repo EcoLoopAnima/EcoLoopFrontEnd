@@ -65,8 +65,8 @@ export const kitsEstudio = [
   },
   {
     id: 104,
-    etiqueta: "Kit Office",
-    nombre: "Kit Office",
+    etiqueta: "Kit Empresarial",
+    nombre: "Kit Empresarial",
     descripcion: "Ideal para la oficina o para regalar.",
     precio: 500,
     imagen: "/assets/kitOficina.png",

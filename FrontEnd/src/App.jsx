@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 
 import Header from "./components/layout/Header";
@@ -12,7 +13,7 @@ import CarritoPage from "./components/pages/CarritoPage";
 
 
 function App() {
-  const [page, setPage] = useState("inicio");
+  const navigate = useNavigate();
   const [carrito, setCarrito] = useState([]);
   const [usuario, setUsuario] = useState(null);
   const [puntos, setPuntos] = useState(0); // puntos Vida a favor
@@ -40,7 +41,7 @@ function App() {
   }
   function cerrarSesion() {
     setUsuario(null);
-    setPage("inicio");
+    navigate("/");
   }
 
   function agregarAlCarrito(producto) {
@@ -96,57 +97,62 @@ function App() {
     0,
   );
 
-  return (
+    return (
     <>
       <Header
-        onNavigate={setPage}
         usuario={usuario}
         onLogout={cerrarSesion}
         cantidadCarrito={cantidadCarrito}
       />
 
-      {page === "inicio" && <Inicio />}
-
-      {page === "tienda" && (
-        <Tienda
-          productos={productos}
-          cargando={cargando}
-          errorApi={errorApi}
-          agregarAlCarrito={agregarAlCarrito}
+      <Routes>
+        <Route path="/" element={<Inicio />} />
+        <Route
+          path="/tienda"
+          element={
+            <Tienda
+              productos={productos}
+              cargando={cargando}
+              errorApi={errorApi}
+              agregarAlCarrito={agregarAlCarrito}
+            />
+          }
         />
-      )}
-      {page === "impacto" && <Impacto />}
-      {page === "puntos" && (
-        <PuntosVida
-          usuario={usuario}
-          productos={productos}
-          puntos={puntos}
-          canjes={canjes}
-          canjear={canjear}
-          onNavigate={setPage}
+        <Route path="/impacto" element={<Impacto />} />
+        <Route
+          path="/puntos"
+          element={
+            <PuntosVida
+              usuario={usuario}
+              productos={productos}
+              puntos={puntos}
+              canjes={canjes}
+              canjear={canjear}
+            />
+          }
         />
-      )}
-      {page === "nosotros" && <Nosotros />}
-      {page === "login" && (
-        <Login
-          usuario={usuario}
-          onLogin={iniciarSesion}
-          onLogout={cerrarSesion}
-          onNavigate={setPage}
+        <Route path="/nosotros" element={<Nosotros />} />
+        <Route
+          path="/login"
+          element={
+            <Login usuario={usuario} onLogin={iniciarSesion} onLogout={cerrarSesion} />
+          }
         />
-      )}
-
-      {page === "carrito" && (
-        <CarritoPage
-          carrito={carrito}
-          usuario={usuario}
-          cambiarCantidad={cambiarCantidad}
-          quitarDelCarrito={quitarDelCarrito}
-          vaciarCarrito={vaciarCarrito}
-          comprar={comprar}
-          onNavigate={setPage}
+        <Route
+          path="/carrito"
+          element={
+            <CarritoPage
+              carrito={carrito}
+              usuario={usuario}
+              cambiarCantidad={cambiarCantidad}
+              quitarDelCarrito={quitarDelCarrito}
+              vaciarCarrito={vaciarCarrito}
+              comprar={comprar}
+            />
+          }
         />
-      )}
+        <Route path="*" element={<p className="pagina-404">Esta página no existe.</p>} />
+      </Routes>
     </>
   );
 }

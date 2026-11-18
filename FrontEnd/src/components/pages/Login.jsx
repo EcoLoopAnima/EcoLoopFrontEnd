@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 import Boton from "../ui/Botones";
 import logo from "../../assets/Logo4.png";
 
-function Login({ usuario, onLogin, onLogout, onNavigate }) {
+function Login({ usuario, onLogin, onLogout }) {
+  const navigate = useNavigate();
   const [creando, setCreando] = useState(false);
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
@@ -16,7 +18,7 @@ function Login({ usuario, onLogin, onLogout, onNavigate }) {
       setError("Completá todos los campos.");
       return;
     }
-   
+
     const nombreFinal = creando ? nombre.trim() : correo.split("@")[0];
     onLogin({ nombre: nombreFinal, correo: correo.trim() });
     setNombre("");
@@ -36,7 +38,7 @@ function Login({ usuario, onLogin, onLogout, onNavigate }) {
             Gracias por sumarte a EcoLoop. Cada compra ayuda a que más estudiantes tengan útiles.
           </p>
           <div className="usuario-botones">
-            <Boton onClick={() => onNavigate("tienda")}>Ir a la tienda</Boton>
+            <Boton onClick={() => navigate("/tienda")}>Ir a la tienda</Boton>
             <Boton variante="secundario" onClick={onLogout}>Cerrar sesión</Boton>
           </div>
         </section>

@@ -1,4 +1,5 @@
 import "./puntosVida.css";
+import { useNavigate } from "react-router-dom";
 import Boton from "../ui/Botones";
 
 const pasos = [
@@ -7,7 +8,9 @@ const pasos = [
   { id: 3, icono: "🎁", titulo: "Canjeás", texto: "Usás tus puntos para llevarte artículos de la tienda." },
 ];
 
-function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate }) {
+function PuntosVida({ usuario, productos, puntos, canjes, canjear }) {
+  const navigate = useNavigate();
+
   return (
     <main className="pv">
       <h2 className="pv-titulo">Puntos Loop</h2>
@@ -26,7 +29,7 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate })
       {!usuario ? (
         <section className="pv-saldo">
           <p>Iniciá sesión para ver tus puntos y canjearlos.</p>
-          <Boton onClick={() => onNavigate("login")}>Iniciar sesión</Boton>
+          <Boton onClick={() => navigate("/login")}>Iniciar sesión</Boton>
         </section>
       ) : (
         <>
@@ -35,7 +38,7 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate })
             <strong className="pv-numero">{puntos}</strong>
             <p>puntos Vida</p>
             {puntos === 0 && (
-              <Boton onClick={() => onNavigate("tienda")}>Ir a comprar</Boton>
+              <Boton onClick={() => navigate("/tienda")}>Ir a comprar</Boton>
             )}
           </section>
 
@@ -70,10 +73,7 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear, onNavigate })
           )}
         </>
       )}
-
-  
     </main>
-    
   );
 }
 
