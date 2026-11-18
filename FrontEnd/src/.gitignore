@@ -1,5 +1,0 @@
-# Ignorar una carpeta de dependencias
-node_modules/
-
-# Ignorar archivos de variables de entorno
-.env
