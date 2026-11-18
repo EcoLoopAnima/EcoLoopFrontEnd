@@ -1,6 +1,7 @@
 import "./puntosVida.css";
 import { useNavigate } from "react-router-dom";
 import Boton from "../ui/Botones";
+import Footer from "../layout/Footer";
 
 const pasos = [
   { id: 1, icono: "🛒", titulo: "Comprás", texto: "Cada peso que gastás en la tienda te da 1 punto Loop." },
@@ -73,6 +74,7 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear }) {
           )}
         </>
       )}
+     
     </main>
   );
 }

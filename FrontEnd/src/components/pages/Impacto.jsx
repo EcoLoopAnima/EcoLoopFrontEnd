@@ -1,5 +1,6 @@
 
 import "./Impacto.css";
+import Footer from "../layout/Footer";
 
 const datosEncuesta = [
   {
@@ -105,7 +106,7 @@ function Impacto() {
           potencial, no resultados de impacto ambiental o social ya alcanzados.
         </p>
       </section>
-
+  <Footer />
     </main>
   );
 }
