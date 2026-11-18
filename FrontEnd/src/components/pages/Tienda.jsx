@@ -55,17 +55,6 @@ function Tienda({ productos, cargando, errorApi, busqueda, limpiarBusqueda, agre
         </section>
       )}
 
-      {kitsEmpresariales.length > 0 && (
-        <section className="tienda-seccion">
-          <h2 className="titulo-seccion">Kits empresariales</h2>
-          <div className="grid-kits">
-            {kitsEmpresariales.map((kit) => (
-              <KitCard key={kit.id} kit={kit} agregarAlCarrito={agregarAlCarrito} />
-            ))}
-          </div>
-        </section>
-      )}
-
       {individuales.length > 0 && (
         <section className="tienda-seccion">
           <h2 className="titulo-seccion">Productos individuales</h2>
