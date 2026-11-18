@@ -9,6 +9,7 @@ import Lupa from "../ui/Lupa";
 function Header({
   usuario: sesion,
   onLogout,
+  onBuscar,
   cantidadCarrito = 0,
 }) {
   const [buscando, setBuscando] = useState(false);
@@ -43,7 +44,10 @@ function Header({
           <Lupa
             abierto={buscando}
             setAbierto={setBuscando}
-            onBuscar={(texto) => console.log("Buscando:", texto)}
+            onBuscar={(texto) => {
+              onBuscar(texto);
+              setBuscando(false);
+            }}
           />
 
           <div className="header-extra">

@@ -1,7 +1,6 @@
 import "./puntosVida.css";
 import { useNavigate } from "react-router-dom";
 import Boton from "../ui/Botones";
-import Footer from "../layout/Footer";
 
 const pasos = [
   { id: 1, icono: "🛒", titulo: "Comprás", texto: "Cada peso que gastás en la tienda te da 1 punto Loop." },
@@ -37,7 +36,7 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear }) {
           <section className="pv-saldo">
             <p>Tu saldo</p>
             <strong className="pv-numero">{puntos}</strong>
-            <p>puntos Vida</p>
+            <p>puntos Loop</p>
             {puntos === 0 && (
               <Boton onClick={() => navigate("/tienda")}>Ir a comprar</Boton>
             )}
@@ -74,7 +73,6 @@ function PuntosVida({ usuario, productos, puntos, canjes, canjear }) {
           )}
         </>
       )}
-     
     </main>
   );
 }

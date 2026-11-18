@@ -11,12 +11,12 @@ import Nosotros from "./components/pages/Nosotros";
 import Login from "./components/pages/Login";
 import CarritoPage from "./components/pages/CarritoPage";
 
-
 function App() {
   const navigate = useNavigate();
   const [carrito, setCarrito] = useState([]);
   const [usuario, setUsuario] = useState(null);
-  const [puntos, setPuntos] = useState(0); // puntos Vida a favor
+  const [puntos, setPuntos] = useState(0); // puntos Loop a favor
+  const [busqueda, setBusqueda] = useState(""); // texto del buscador
   const [canjes, setCanjes] = useState([]); // artículos ya canjeados
 
   // Productos que vienen del backend
@@ -36,6 +36,12 @@ function App() {
       .finally(() => setCargando(false));
   }, []);
 
+  // La lupa del Header busca y nos lleva a la tienda
+  function buscar(texto) {
+    setBusqueda(texto);
+    navigate("/tienda");
+  }
+
   function iniciarSesion(datos) {
     setUsuario(datos);
   }
@@ -47,7 +53,6 @@ function App() {
   function agregarAlCarrito(producto) {
     const yaEsta = carrito.find((item) => item.id === producto.id);
     if (yaEsta) {
-
       setCarrito(
         carrito.map((item) =>
           item.id === producto.id
@@ -66,7 +71,7 @@ function App() {
         .map((item) =>
           item.id === id ? { ...item, cantidad: item.cantidad + cambio } : item,
         )
-        .filter((item) => item.cantidad > 0), 
+        .filter((item) => item.cantidad > 0),
     );
   }
 
@@ -78,12 +83,10 @@ function App() {
     setCarrito([]);
   }
 
-
   function comprar(total) {
     setPuntos(puntos + total);
     setCarrito([]);
   }
-
 
   function canjear(producto) {
     if (puntos < producto.precio) return;
@@ -91,17 +94,17 @@ function App() {
     setCanjes([...canjes, producto]);
   }
 
-  
   const cantidadCarrito = carrito.reduce(
     (total, item) => total + item.cantidad,
     0,
   );
 
-    return (
+  return (
     <>
       <Header
         usuario={usuario}
         onLogout={cerrarSesion}
+        onBuscar={buscar}
         cantidadCarrito={cantidadCarrito}
       />
 
@@ -114,6 +117,8 @@ function App() {
               productos={productos}
               cargando={cargando}
               errorApi={errorApi}
+              busqueda={busqueda}
+              limpiarBusqueda={() => setBusqueda("")}
               agregarAlCarrito={agregarAlCarrito}
             />
           }

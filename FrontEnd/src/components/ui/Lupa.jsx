@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import lupa from "../../assets/lupa.png";
+import lupa from "../../assets/Lupa.png";
 
 function Lupa({ abierto, setAbierto, onBuscar }) {
     const [texto, setTexto] = useState("");
@@ -8,7 +8,6 @@ function Lupa({ abierto, setAbierto, onBuscar }) {
     useEffect(() => {
         if (abierto) inputRef.current?.focus();
     }, [abierto]);
-
 
     useEffect(() => {
         const onKey = (e) => e.key === "Escape" && setAbierto(false);

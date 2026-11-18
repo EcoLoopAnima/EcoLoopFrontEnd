@@ -461,3 +461,29 @@
   color: var(--verde);
   font-family: 'Montserrat', sans-serif;
 }
+
+.tienda-busqueda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  color: var(--verde);
+  font-family: "Montserrat", sans-serif;
+}
+
+.tienda-busqueda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  color: var(--verde);
+  font-family: "Montserrat", sans-serif;
+}

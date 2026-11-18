@@ -68,6 +68,12 @@
   justify-content: center;
   align-self: center;
 }
+
+.usuario-nota {
+  color: #777;
+  font-size: 0.8rem;
+}
+
 .usuario-correo { margin: 0; color: #555; }
 .usuario-texto { margin: 0; color: #333; line-height: 1.5; }
 .usuario-botones { display: flex; flex-direction: column; gap: 0.6rem; }

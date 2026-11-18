@@ -22,7 +22,7 @@ function CarritoPage({
 
   function finalizar() {
     if (!usuario) {
-      navigate("/login");
+      navigate("/login", { state: { desde: "/carrito" } }); // después del login vuelve acá
       return;
     }
     comprar(total);
@@ -36,7 +36,7 @@ function CarritoPage({
         <section className="cart-vacio">
           <h2>¡Gracias por tu compra, {usuario.nombre}!</h2>
           <p className="cart-puntos">
-            Ganaste <strong>{ganados} puntos Vida</strong>
+            Ganaste <strong>{ganados} puntos Loop</strong>
           </p>
           <p>Con cada compra ayudás a que más estudiantes tengan útiles.</p>
           <Botones onClick={() => navigate("/puntos")}>
@@ -120,7 +120,7 @@ function CarritoPage({
           </Botones>
           {usuario ? (
             <small className="cart-aviso">
-              Ganás {total} puntos Vida con esta compra.
+              Ganás {total} puntos Loop con esta compra.
             </small>
           ) : (
             <small>Tenés que iniciar sesión para finalizar la compra.</small>

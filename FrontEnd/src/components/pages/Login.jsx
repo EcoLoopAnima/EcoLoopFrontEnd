@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./login.css";
 import Boton from "../ui/Botones";
 import logo from "../../assets/Logo4.png";
 
 function Login({ usuario, onLogin, onLogout }) {
   const navigate = useNavigate();
+  const location = useLocation();
+  const desde = location.state?.desde; // página a la que había que volver (ej: el carrito)
   const [creando, setCreando] = useState(false);
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
@@ -25,6 +27,7 @@ function Login({ usuario, onLogin, onLogout }) {
     setCorreo("");
     setPassword("");
     setError("");
+    if (desde) navigate(desde);
   }
 
   if (usuario) {
@@ -61,6 +64,10 @@ function Login({ usuario, onLogin, onLogout }) {
         {error && <p className="usuario-error">{error}</p>}
 
         <Boton type="submit">{creando ? "Registrarme" : "Ingresar"}</Boton>
+
+        <small className="usuario-nota">
+          Demostración: la sesión es simulada y no se verifica la contraseña.
+        </small>
 
         <p className="usuario-cambio">
           {creando ? "¿Ya tenés cuenta?" : "¿Todavía no tenés cuenta?"}{" "}

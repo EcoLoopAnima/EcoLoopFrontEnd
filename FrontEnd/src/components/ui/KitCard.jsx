@@ -4,6 +4,7 @@ import BotonAgregar from "./BotonAgregar";
 
 function KitCard({ kit, agregarAlCarrito, horizontal = false }) {
   const [abierto, setAbierto] = useState(false);
+  const tieneDetalle = kit.incluye && kit.incluye.length > 0;
 
   return (
     <article className={horizontal ? "kit-card kit-horizontal" : "kit-card"}>
@@ -16,7 +17,7 @@ function KitCard({ kit, agregarAlCarrito, horizontal = false }) {
         <h3>{kit.nombre}</h3>
         <p>{kit.descripcion}</p>
 
-        {abierto && (
+        {abierto && tieneDetalle && (
           <ul className="kit-incluye">
             {kit.incluye.map((item) => (
               <li key={item}>{item}</li>
@@ -26,12 +27,14 @@ function KitCard({ kit, agregarAlCarrito, horizontal = false }) {
 
         <div className="kit-pie">
           <strong>$ {kit.precio} UYU</strong>
-          <Boton onClick={() => setAbierto(!abierto)}>
-            {abierto ? "Ocultar" : "Ver detalle"}
-          </Boton>
+          {tieneDetalle && (
+            <Boton onClick={() => setAbierto(!abierto)}>
+              {abierto ? "Ocultar" : "Ver detalle"}
+            </Boton>
+          )}
         </div>
 
-        {abierto && (
+        {(abierto || !tieneDetalle) && (
           <BotonAgregar producto={kit} agregarAlCarrito={agregarAlCarrito} />
         )}
       </div>
